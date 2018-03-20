@@ -4,86 +4,106 @@ namespace API
 {
     public class ScenarioList
     {
-        public List<Scenario> Scenarios { get; set; }
+        private List<Scenario> m_Scenarios;
+
+        public ScenarioList()
+        {
+            m_Scenarios = new List<Scenario>();
+        }
+
+        public ScenarioList(ScenarioList scenarioList)
+        {
+            m_Scenarios = scenarioList.GetScenarios();
+        }
+
+        public List<Scenario> GetScenarios()
+        {
+            return m_Scenarios;
+        }
+
+        public void SetScenarios(List<Scenario> scenarios)
+        {
+            m_Scenarios = scenarios;
+        }
     }
 
-    public struct Scenario
+    public class Scenario
     {
         /// <summary>
         /// The list of choices that can be made from this scenario.
         /// </summary>
-        public List<Choice> Choices { get; set; }
+        private List<Choice> m_Choices;
 
         /// <summary>
         /// If null string, black screen. 
         /// If video path but wrong, then display error.
         /// </summary>
-        public string VideoFilePath { get; set; }
+        private string m_VideoFilePath;
 
         /// <summary>
         /// If null string, no sound. 
         /// Indicates the file path for the sound file for the scenario.
         /// </summary>
-        public string SoundFilePath { get; set; }
+        private string m_SoundFilePath;
 
         /// <summary>
         /// Null indicates no scenario text.
         /// </summary>
-        public string ScenarioText { get; set; }
+        private string m_ScenarioText;
 
         /// <summary>
         /// The brightness of the scene as a percentage.
         /// </summary>
-        public int ScenarioBrightness { get; set; }
+        private int m_VideoBrightness;
 
         /// <summary>
         /// Sets emergency lighting intensity.
         /// </summary>
-        public int EmergencyLighting { get; set; }
+        private int m_AmbientBrightness;
 
         /// <summary>
         /// The sound volume as a percentage (i.e. between 1 and 100).
         /// </summary>
-        public int SoundVolume { get; set; }
+        private int m_SoundVolume;
 
         /// <summary>
         /// Indicates the presence of a fire effect in the scenario.
         /// </summary>
-        public bool HasFire { get; set; }
+        private bool m_HasFire;
 
         /// <summary>
         /// Indicates that the scenario has a smoke effect.
         /// </summary>
-        public bool HasSmoke { get; set; }
+        private bool m_HasSmoke;
 
         /// <summary>
         /// Indicates that the extinguisher effect should be activated. 
         /// </summary>
-        public bool HasExtinguisher { get; set; }
+        private bool m_HasExtinguisher;
     }
 
-    public struct Choice
+    public class Choice
     {
         /// <summary>
         /// The scenario that the choice should. 
         /// </summary>
-        public Scenario DestinationScenario { get; }
+        private Scenario m_NextScenario;
 
         /// <summary>
         /// The choice associated with the text.
         /// </summary>
-        public string ChoiceText { get; set; }
+        private string m_ChoiceText;
 
         /// <summary>
         /// The feedback given at the end if this choice has been made.
         /// </summary>
-        public string ChoiceFeedback { get; set; }
+        private string m_FeedbackText;
 
         /// <summary>
         /// Positive choice - positive score
         /// Negative choice - negative score
         /// Neutral choice/no decision needed - zero
         /// </summary>
-        public int Score { get; }
+        private int m_Score;
     }
 }
