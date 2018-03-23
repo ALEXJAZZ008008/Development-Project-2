@@ -1,9 +1,0 @@
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\bin\Debug\JSONParser.dll
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\bin\Debug\JSONParser.pdb
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\bin\Debug\Newtonsoft.Json.dll
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\bin\Debug\ScenarioList.dll
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\bin\Debug\ScenarioList.pdb
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\bin\Debug\Newtonsoft.Json.xml
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\obj\Debug\JSONParser.csprojResolveAssemblyReference.cache
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\obj\Debug\JSONParser.dll
-C:\Temp\!!!Work!!!\Semester 2\Development Project\API\JSONParser\obj\Debug\JSONParser.pdb
