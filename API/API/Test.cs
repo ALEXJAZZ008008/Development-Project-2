@@ -41,11 +41,15 @@ namespace API
             scenarioList.GetScenarios().Add(scenarioTwo);
             scenarioList.GetScenarios().Add(scenarioThree);
 
-            string json = JSONParser.ScenarioListToJSON(scenarioList);
+            string json = string.Empty;
+
+            JSONParser.TObjectToJSON(ref json, scenarioList);
 
             Console.WriteLine(json);
 
-            ScenarioList jsonScenarioList = JSONParser.JSONToScenarioList(json);
+            ScenarioList jsonScenarioList = new ScenarioList();
+
+            JSONParser.JSONToTObject(json, ref jsonScenarioList);
 
             Console.ReadLine();
         }

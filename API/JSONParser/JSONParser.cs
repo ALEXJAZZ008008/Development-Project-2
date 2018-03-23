@@ -9,14 +9,14 @@ namespace API
 {
     public static class JSONParser
     {
-        public static string ScenarioListToJSON(ScenarioList scenarioList)
+        public static void TObjectToJSON<T>(ref string json, T tObject)
         {
-            return JsonConvert.SerializeObject(scenarioList, Formatting.Indented, new JsonSerializerSettings { ContractResolver = new MyContractResolver(), PreserveReferencesHandling = PreserveReferencesHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize });
+            json = JsonConvert.SerializeObject(tObject, Formatting.Indented, new JsonSerializerSettings { ContractResolver = new MyContractResolver(), PreserveReferencesHandling = PreserveReferencesHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize });
         }
 
-        public static ScenarioList JSONToScenarioList(string json)
+        public static void JSONToTObject<T>(string json, ref T tObject)
         {
-            return JsonConvert.DeserializeObject<ScenarioList>(json, new JsonSerializerSettings { ContractResolver = new MyContractResolver(), PreserveReferencesHandling = PreserveReferencesHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize });
+            tObject =  JsonConvert.DeserializeObject<T>(json, new JsonSerializerSettings { ContractResolver = new MyContractResolver(), PreserveReferencesHandling = PreserveReferencesHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize });
         }
     }
 
