@@ -9,7 +9,7 @@ namespace UnityStandardAssets.Utility
     {
         // shuts off emission, and waits for all particles to expire
         // before destroying the gameObject
-        
+
         private float m_MaxLifetime;
         private bool m_EarlyStop;
 
