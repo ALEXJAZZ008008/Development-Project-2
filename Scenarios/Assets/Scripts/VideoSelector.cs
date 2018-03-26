@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoSelector : MonoBehaviour
@@ -11,12 +9,7 @@ public class VideoSelector : MonoBehaviour
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
+
         videoPlayer.Play();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
