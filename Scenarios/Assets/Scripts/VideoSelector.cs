@@ -12,4 +12,9 @@ public class VideoSelector : MonoBehaviour
 
         videoPlayer.Play();
     }
+
+    private void OnDestroy()
+    {
+        //videoPlayer.Stop();
+    }
 }

@@ -2,6 +2,7 @@
 
 public class CameraControler : MonoBehaviour
 {
+    public GameObject[] children;
     public Vector3 speed;
 
     private Vector3 rotation;
@@ -12,8 +13,15 @@ public class CameraControler : MonoBehaviour
         rotation = new Vector3();
     }
 
-    // LastUpdate is called once per frame
-    void Update()
+    private void UpdateChildOnKeyPress(GameObject child, KeyCode keyDown)
+    {
+        if (Input.GetKeyDown(keyDown))
+        {
+            child.SetActive(!child.activeSelf);
+        }
+    }
+
+    private void UpdateCamera()
     {
         rotation.x += speed.x * -Input.GetAxis("Vertical");
         rotation.y -= speed.y * -Input.GetAxis("Horizontal");
@@ -43,5 +51,17 @@ public class CameraControler : MonoBehaviour
         }
 
         transform.eulerAngles = new Vector3(rotation.x, rotation.y, rotation.z);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateChildOnKeyPress(children[0], KeyCode.Y);
+        UpdateChildOnKeyPress(children[1], KeyCode.U);
+        UpdateChildOnKeyPress(children[2], KeyCode.I);
+        UpdateChildOnKeyPress(children[3], KeyCode.O);
+        UpdateChildOnKeyPress(children[4], KeyCode.P);
+
+        UpdateCamera();
     }
 }

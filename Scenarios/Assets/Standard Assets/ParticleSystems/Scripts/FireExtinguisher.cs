@@ -10,7 +10,7 @@ namespace UnityStandardAssets.Effects
         public Renderer systemRenderer;
         public float maxPower = 25;
         public float minPower = 1;
-        public float changeSpeed = 0.25f;
+        public float changeSpeed = 0.1f;
 
         private float m_Power;
 
