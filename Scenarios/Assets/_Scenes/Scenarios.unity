@@ -6558,5 +6558,9 @@ MonoBehaviour:
   smokeCanvas: {fileID: 1013887843}
   fireCanvas: {fileID: 1656003954}
   fireExtinguisherCanvas: {fileID: 921051380}
+  defaultScenarioListJSON: {fileID: 4900000, guid: 524dec5b3e895e54383d654ee8fae378,
+    type: 3}
   scenarioText: {fileID: 1681917384}
   scenarioChoiceText: {fileID: 1751585076}
+  inportScenarioBool: 1
+  defaultScenarioListBool: 1

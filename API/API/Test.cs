@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace API
 {
@@ -7,39 +10,72 @@ namespace API
     {
         static void Main(string[] args)
         {
+            string directoryPath = Assembly.GetExecutingAssembly().CodeBase;
+
+            directoryPath = Regex.Split(directoryPath, "file:///")[1];
+
+            directoryPath = Regex.Split(directoryPath, "/API/API/bin/Debug/API.exe")[0];
+
+            string videoPath = "/Scenarios/Assets/Videos/Stationary1.mp4";
+            string ambientSoundPath = "/Scenarios/Assets/Audio/AmbientHospital.wav";
+            string narrationPath = "/Scenarios/Assets/Audio/Narration.wav";
+            string soundEffectPath = "/Scenarios/Assets/Audio/AlarmSound.wav";
+
             ScenarioList scenarioList = new ScenarioList();
 
-            Scenario scenarioOne = new Scenario(new List<Choice>(), "videoPath", "ambientSoundPath", "narrationPath", "soundEffectPath", "scenarioText", "scenarioChoiceText", 0.0f, 0.0f, 0.0f, 0.0f, true, false, false);
-            Scenario scenarioTwo = new Scenario(new List<Choice>(), "Scenarios", "Scenarios", "Scenarios", "Scenarios", "Scenarios", "Scenarios", 1.1f, 2.22f, 3.333f, 4.4444f, false, true, false);
-            Scenario scenarioThree = new Scenario(new List<Choice>(), "Alex", "Alexander", "Alexander Whitehead", "Alexander Charles Whitehead", "Alexander Charles Whitehead", "Alexander Charles Whitehead 1234567890!\"£$%^&*()-=_+[];'#,./{}:@~<>?\\|`¬", 10.01f, 200.002f, 40000.00004f, 800000000.000000008f, true, false, true);
+            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioSix = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
 
             Choice choiceOne = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
 
             scenarioOne.GetChoices().Add(choiceOne);
 
-            Choice choicetwo = new Choice(scenarioOne, "Choice Two", "Very Good!", 1);
-            Choice choicethree = new Choice(scenarioThree, "Choice Three", "Very Bad!", -1);
+            Choice choiceTwo = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
+            Choice choiceThree = new Choice(scenarioThree, "choiceText", "feedbackText", 0);
 
-            scenarioTwo.GetChoices().Add(choicetwo);
-            scenarioTwo.GetChoices().Add(choicethree);
+            scenarioTwo.GetChoices().Add(choiceTwo);
+            scenarioTwo.GetChoices().Add(choiceThree);
 
-            string loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+            Choice choiceFour = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
+            Choice choiceFive = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
+            Choice choiceSix = new Choice(scenarioFour, "choiceText", "feedbackText", 0);
 
-            Choice choicefour = new Choice(scenarioOne, loremIpsum, loremIpsum, 999);
-            Choice choicefive = new Choice(scenarioTwo, loremIpsum, loremIpsum, 0);
-            Choice choiceSix = new Choice(scenarioThree, loremIpsum, loremIpsum, -999);
+            scenarioThree.GetChoices().Add(choiceFour);
+            scenarioThree.GetChoices().Add(choiceFive);
+            scenarioThree.GetChoices().Add(choiceSix);
 
-            scenarioThree.GetChoices().Add(choicefour);
-            scenarioThree.GetChoices().Add(choicefive);
+            Choice choiceSeven = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
+            Choice choiceEight = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
+            Choice choiceNine = new Choice(scenarioThree, "choiceText", "feedbackText", 0);
+            Choice choiceTen = new Choice(scenarioFive, "choiceText", "feedbackText", 0);
 
-            for (int i = 0; i < 10; i++)
-            {
-                scenarioThree.GetChoices().Add(choiceSix);
-            }
+            scenarioFour.GetChoices().Add(choiceSeven);
+            scenarioFour.GetChoices().Add(choiceEight);
+            scenarioFour.GetChoices().Add(choiceNine);
+            scenarioFour.GetChoices().Add(choiceTen);
+
+            Choice choiceEleven = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
+            Choice choiceTwelve = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
+            Choice choiceThirteen = new Choice(scenarioThree, "choiceText", "feedbackText", 0);
+            Choice choiceFourteen = new Choice(scenarioFour, "choiceText", "feedbackText", 0);
+            Choice choiceFifteen = new Choice(scenarioSix, "choiceText", "feedbackText", 0);
+
+            scenarioFive.GetChoices().Add(choiceEleven);
+            scenarioFive.GetChoices().Add(choiceTwelve);
+            scenarioFive.GetChoices().Add(choiceThirteen);
+            scenarioFive.GetChoices().Add(choiceFourteen);
+            scenarioFive.GetChoices().Add(choiceFifteen);
 
             scenarioList.GetScenarios().Add(scenarioOne);
             scenarioList.GetScenarios().Add(scenarioTwo);
             scenarioList.GetScenarios().Add(scenarioThree);
+            scenarioList.GetScenarios().Add(scenarioFour);
+            scenarioList.GetScenarios().Add(scenarioFive);
+            scenarioList.GetScenarios().Add(scenarioSix);
 
             string json = string.Empty;
 
@@ -47,9 +83,31 @@ namespace API
 
             Console.WriteLine(json);
 
+            Console.ReadLine();
+
+            using (StreamWriter streamWriter = new StreamWriter("json.txt"))
+            {
+                streamWriter.Write(json);
+            }
+
             ScenarioList jsonScenarioList = new ScenarioList();
 
             JSONParser.JSONToTObject(json, ref jsonScenarioList);
+
+            string jsonJSON = string.Empty;
+
+            JSONParser.TObjectToJSON(ref jsonJSON, jsonScenarioList);
+
+            JSONParser.TObjectToJSON(ref json, scenarioList);
+
+            if (json == jsonJSON)
+            {
+                Console.WriteLine("Successful");
+            }
+            else
+            {
+                Console.WriteLine("Failure");
+            }
 
             Console.ReadLine();
         }

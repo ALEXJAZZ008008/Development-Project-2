@@ -45,6 +45,8 @@ public class OutTransition : MonoBehaviour
                         objects[i].SetActive(false);
                     }
                 }
+
+                Global.m_NextScenario++;
             }
         }
     }

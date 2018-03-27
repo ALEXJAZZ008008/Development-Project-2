@@ -1,0 +1,268 @@
+{
+  "$id": "1",
+  "m_Scenarios": {
+    "$id": "2",
+    "$values": [
+      {
+        "$id": "3",
+        "m_Choices": {
+          "$id": "4",
+          "$values": [
+            {
+              "$id": "5",
+              "m_NextScenario": {
+                "$id": "6",
+                "m_Choices": {
+                  "$id": "7",
+                  "$values": [
+                    {
+                      "$id": "8",
+                      "m_NextScenario": {
+                        "$ref": "3"
+                      },
+                      "m_ChoiceText": "choiceText",
+                      "m_FeedbackText": "feedbackText",
+                      "m_Score": 0
+                    },
+                    {
+                      "$id": "9",
+                      "m_NextScenario": {
+                        "$id": "10",
+                        "m_Choices": {
+                          "$id": "11",
+                          "$values": [
+                            {
+                              "$id": "12",
+                              "m_NextScenario": {
+                                "$ref": "3"
+                              },
+                              "m_ChoiceText": "choiceText",
+                              "m_FeedbackText": "feedbackText",
+                              "m_Score": 0
+                            },
+                            {
+                              "$id": "13",
+                              "m_NextScenario": {
+                                "$ref": "6"
+                              },
+                              "m_ChoiceText": "choiceText",
+                              "m_FeedbackText": "feedbackText",
+                              "m_Score": 0
+                            },
+                            {
+                              "$id": "14",
+                              "m_NextScenario": {
+                                "$id": "15",
+                                "m_Choices": {
+                                  "$id": "16",
+                                  "$values": [
+                                    {
+                                      "$id": "17",
+                                      "m_NextScenario": {
+                                        "$ref": "3"
+                                      },
+                                      "m_ChoiceText": "choiceText",
+                                      "m_FeedbackText": "feedbackText",
+                                      "m_Score": 0
+                                    },
+                                    {
+                                      "$id": "18",
+                                      "m_NextScenario": {
+                                        "$ref": "6"
+                                      },
+                                      "m_ChoiceText": "choiceText",
+                                      "m_FeedbackText": "feedbackText",
+                                      "m_Score": 0
+                                    },
+                                    {
+                                      "$id": "19",
+                                      "m_NextScenario": {
+                                        "$ref": "10"
+                                      },
+                                      "m_ChoiceText": "choiceText",
+                                      "m_FeedbackText": "feedbackText",
+                                      "m_Score": 0
+                                    },
+                                    {
+                                      "$id": "20",
+                                      "m_NextScenario": {
+                                        "$id": "21",
+                                        "m_Choices": {
+                                          "$id": "22",
+                                          "$values": [
+                                            {
+                                              "$id": "23",
+                                              "m_NextScenario": {
+                                                "$ref": "3"
+                                              },
+                                              "m_ChoiceText": "choiceText",
+                                              "m_FeedbackText": "feedbackText",
+                                              "m_Score": 0
+                                            },
+                                            {
+                                              "$id": "24",
+                                              "m_NextScenario": {
+                                                "$ref": "6"
+                                              },
+                                              "m_ChoiceText": "choiceText",
+                                              "m_FeedbackText": "feedbackText",
+                                              "m_Score": 0
+                                            },
+                                            {
+                                              "$id": "25",
+                                              "m_NextScenario": {
+                                                "$ref": "10"
+                                              },
+                                              "m_ChoiceText": "choiceText",
+                                              "m_FeedbackText": "feedbackText",
+                                              "m_Score": 0
+                                            },
+                                            {
+                                              "$id": "26",
+                                              "m_NextScenario": {
+                                                "$ref": "15"
+                                              },
+                                              "m_ChoiceText": "choiceText",
+                                              "m_FeedbackText": "feedbackText",
+                                              "m_Score": 0
+                                            },
+                                            {
+                                              "$id": "27",
+                                              "m_NextScenario": {
+                                                "$id": "28",
+                                                "m_Choices": {
+                                                  "$id": "29",
+                                                  "$values": []
+                                                },
+                                                "m_VideoPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
+                                                "m_AmbientSoundPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
+                                                "m_NarrationPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
+                                                "m_SoundEffectPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+                                                "m_ScenarioText": "scenarioText",
+                                                "m_ScenarioChoiceText": "scenarioChoiceText",
+                                                "m_LightingIntensity": 0.25,
+                                                "m_AmbientSoundVolume": 0.75,
+                                                "m_NarrationVolume": 1.0,
+                                                "m_SoundEffectVolume": 0.75,
+                                                "m_SmokeBool": false,
+                                                "m_FireBool": false,
+                                                "m_FireExtinguisherBool": false
+                                              },
+                                              "m_ChoiceText": "choiceText",
+                                              "m_FeedbackText": "feedbackText",
+                                              "m_Score": 0
+                                            }
+                                          ]
+                                        },
+                                        "m_VideoPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
+                                        "m_AmbientSoundPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
+                                        "m_NarrationPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
+                                        "m_SoundEffectPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+                                        "m_ScenarioText": "scenarioText",
+                                        "m_ScenarioChoiceText": "scenarioChoiceText",
+                                        "m_LightingIntensity": 0.25,
+                                        "m_AmbientSoundVolume": 0.75,
+                                        "m_NarrationVolume": 1.0,
+                                        "m_SoundEffectVolume": 0.75,
+                                        "m_SmokeBool": false,
+                                        "m_FireBool": false,
+                                        "m_FireExtinguisherBool": false
+                                      },
+                                      "m_ChoiceText": "choiceText",
+                                      "m_FeedbackText": "feedbackText",
+                                      "m_Score": 0
+                                    }
+                                  ]
+                                },
+                                "m_VideoPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
+                                "m_AmbientSoundPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
+                                "m_NarrationPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
+                                "m_SoundEffectPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+                                "m_ScenarioText": "scenarioText",
+                                "m_ScenarioChoiceText": "scenarioChoiceText",
+                                "m_LightingIntensity": 0.25,
+                                "m_AmbientSoundVolume": 0.75,
+                                "m_NarrationVolume": 1.0,
+                                "m_SoundEffectVolume": 0.75,
+                                "m_SmokeBool": false,
+                                "m_FireBool": false,
+                                "m_FireExtinguisherBool": false
+                              },
+                              "m_ChoiceText": "choiceText",
+                              "m_FeedbackText": "feedbackText",
+                              "m_Score": 0
+                            }
+                          ]
+                        },
+                        "m_VideoPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
+                        "m_AmbientSoundPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
+                        "m_NarrationPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
+                        "m_SoundEffectPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+                        "m_ScenarioText": "scenarioText",
+                        "m_ScenarioChoiceText": "scenarioChoiceText",
+                        "m_LightingIntensity": 0.25,
+                        "m_AmbientSoundVolume": 0.75,
+                        "m_NarrationVolume": 1.0,
+                        "m_SoundEffectVolume": 0.75,
+                        "m_SmokeBool": false,
+                        "m_FireBool": false,
+                        "m_FireExtinguisherBool": false
+                      },
+                      "m_ChoiceText": "choiceText",
+                      "m_FeedbackText": "feedbackText",
+                      "m_Score": 0
+                    }
+                  ]
+                },
+                "m_VideoPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
+                "m_AmbientSoundPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
+                "m_NarrationPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
+                "m_SoundEffectPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+                "m_ScenarioText": "scenarioText",
+                "m_ScenarioChoiceText": "scenarioChoiceText",
+                "m_LightingIntensity": 0.25,
+                "m_AmbientSoundVolume": 0.75,
+                "m_NarrationVolume": 1.0,
+                "m_SoundEffectVolume": 0.75,
+                "m_SmokeBool": false,
+                "m_FireBool": false,
+                "m_FireExtinguisherBool": false
+              },
+              "m_ChoiceText": "choiceText",
+              "m_FeedbackText": "feedbackText",
+              "m_Score": 0
+            }
+          ]
+        },
+        "m_VideoPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
+        "m_AmbientSoundPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
+        "m_NarrationPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
+        "m_SoundEffectPath": "C:/Users/Alexander Whitehead/Documents/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_ScenarioText": "scenarioText",
+        "m_ScenarioChoiceText": "scenarioChoiceText",
+        "m_LightingIntensity": 0.25,
+        "m_AmbientSoundVolume": 0.75,
+        "m_NarrationVolume": 1.0,
+        "m_SoundEffectVolume": 0.75,
+        "m_SmokeBool": false,
+        "m_FireBool": false,
+        "m_FireExtinguisherBool": false
+      },
+      {
+        "$ref": "6"
+      },
+      {
+        "$ref": "10"
+      },
+      {
+        "$ref": "15"
+      },
+      {
+        "$ref": "21"
+      },
+      {
+        "$ref": "28"
+      }
+    ]
+  }
+}
