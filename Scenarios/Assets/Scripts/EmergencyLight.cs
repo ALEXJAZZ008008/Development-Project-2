@@ -3,16 +3,18 @@
 public class EmergencyLight : MonoBehaviour
 {
     public float speed;
-    public float intensity;
 
     private Material material;
     private bool alphaAscending;
 
+    void Awake()
+    {
+        material = GetComponent<Renderer>().material;
+    }
+
     // Use this for initialization
     void Start()
     {
-        material = GetComponent<Renderer>().material;
-
         alphaAscending = true;
     }
 
@@ -32,7 +34,7 @@ public class EmergencyLight : MonoBehaviour
             colour.a -= alphaIncrement;
         }
 
-        if (colour.a < 0.0f || colour.a > intensity)
+        if (colour.a < 0.0f || colour.a > Global.m_LightingIntensity)
         {
             alphaAscending = !alphaAscending;
         }

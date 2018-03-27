@@ -300,12 +300,15 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\Audio.cs" />
     <Compile Include="Assets\Scripts\CameraControler.cs" />
     <Compile Include="Assets\Scripts\EmergencyLight.cs" />
+    <Compile Include="Assets\Scripts\Global.cs" />
     <Compile Include="Assets\Scripts\InTransition.cs" />
+    <Compile Include="Assets\Scripts\JSONParser.cs" />
     <Compile Include="Assets\Scripts\OutTransition.cs" />
+    <Compile Include="Assets\Scripts\ScenarioList.cs" />
     <Compile Include="Assets\Scripts\UpdateMetricsText.cs" />
-    <Compile Include="Assets\Scripts\UpdateText.cs" />
     <Compile Include="Assets\Scripts\Video.cs" />
     <Compile Include="Assets\Shaders\SkyboxPanoramicShader\SkyboxPanoramicBetaShaderGUI.cs" />
   </ItemGroup>

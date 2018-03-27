@@ -11,16 +11,16 @@ public class InTransition : MonoBehaviour
     private Material material;
     private float pause;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
         material = GetComponent<Renderer>().material;
     }
 
     void OnEnable()
     {
-        audioVisual.SetActive(true);
+        Global.m_UpdateScenario = true;
 
+        audioVisual.SetActive(true);
         scenarioText.SetActive(true);
 
         pause = 0.0f;

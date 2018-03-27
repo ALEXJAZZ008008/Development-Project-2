@@ -9,8 +9,7 @@ public class OutTransition : MonoBehaviour
 
     private Material material;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
         material = GetComponent<Renderer>().material;
     }

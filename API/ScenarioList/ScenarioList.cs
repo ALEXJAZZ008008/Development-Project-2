@@ -40,36 +40,36 @@ namespace API
         private List<Choice> m_Choices;
 
         /// <summary>
-        /// If null string, black screen. 
+        /// If empty string, black screen. 
         /// If video path but wrong, then display error.
         /// </summary>
         private string m_VideoPath;
 
         /// <summary>
-        /// If null string, no sound. 
+        /// If empty string, no sound. 
         /// Indicates the file path for the ambient sound file for the scenario.
         /// </summary>
         private string m_AmbientSoundPath;
 
         /// <summary>
-        /// If null string, no sound. 
+        /// If empty string, no sound. 
         /// Indicates the file path for the narration file for the scenario.
         /// </summary>
         private string m_NarrationPath;
 
         /// <summary>
-        /// If null string, no sound. 
+        /// If empty string, no sound. 
         /// Indicates the file path for the sound effect file for the scenario.
         /// </summary>
         private string m_SoundEffectPath;
 
         /// <summary>
-        /// Null indicates no scenario text.
+        /// Empty indicates no scenario text.
         /// </summary>
         private string m_ScenarioText;
 
         /// <summary>
-        /// Null indicates no scenario choice text.
+        /// Empty indicates no scenario choice text.
         /// </summary>
         private string m_ScenarioChoiceText;
 
@@ -94,19 +94,19 @@ namespace API
         private float m_SoundEffectVolume;
 
         /// <summary>
-        /// Indicates the presence of a fire effect in the scenario.
-        /// </summary>
-        private bool m_FireBool;
-
-        /// <summary>
         /// Indicates that the scenario has a smoke effect.
         /// </summary>
         private bool m_SmokeBool;
 
         /// <summary>
+        /// Indicates the presence of a fire effect in the scenario.
+        /// </summary>
+        private bool m_FireBool;
+
+        /// <summary>
         /// Indicates that the extinguisher effect should be activated. 
         /// </summary>
-        private bool m_ExtinguisherBool;
+        private bool m_FireExtinguisherBool;
 
         public Scenario()
         {
@@ -124,9 +124,9 @@ namespace API
             m_NarrationVolume = 0.0f;
             m_SoundEffectVolume = 0.0f;
 
-            m_FireBool = false;
             m_SmokeBool = false;
-            m_ExtinguisherBool = false;
+            m_FireBool = false;
+            m_FireExtinguisherBool = false;
         }
 
         public Scenario(Scenario scenario)
@@ -145,12 +145,12 @@ namespace API
             m_NarrationVolume = scenario.GetNarrationVolume();
             m_SoundEffectVolume = scenario.GetSoundEffectVolume();
 
-            m_FireBool = scenario.GetFireBool();
             m_SmokeBool = scenario.GetSmokeBool();
-            m_ExtinguisherBool = scenario.GetExtinguisherBool();
+            m_FireBool = scenario.GetFireBool();
+            m_FireExtinguisherBool = scenario.GetFireExtinguisherBool();
         }
 
-        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string scenarioText, string scenarioChoiceText, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, bool fireBool, bool smokeBool, bool extinguisherBool)
+        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string scenarioText, string scenarioChoiceText, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, bool fireBool, bool smokeBool, bool fireExtinguisherBool)
         {
             m_Choices = choices;
 
@@ -166,9 +166,9 @@ namespace API
             m_NarrationVolume = narrationVolume;
             m_SoundEffectVolume = soundEffectVolume;
 
-            m_FireBool = fireBool;
             m_SmokeBool = smokeBool;
-            m_ExtinguisherBool = extinguisherBool;
+            m_FireBool = fireBool;
+            m_FireExtinguisherBool = fireExtinguisherBool;
         }
 
         public List<Choice> GetChoices()
@@ -226,19 +226,19 @@ namespace API
             return m_SoundEffectVolume;
         }
 
-        public bool GetFireBool()
-        {
-            return m_FireBool;
-        }
-
         public bool GetSmokeBool()
         {
             return m_SmokeBool;
         }
 
-        public bool GetExtinguisherBool()
+        public bool GetFireBool()
         {
-            return m_ExtinguisherBool;
+            return m_FireBool;
+        }
+
+        public bool GetFireExtinguisherBool()
+        {
+            return m_FireExtinguisherBool;
         }
 
         public void SetChoices(List<Choice> choices)
@@ -296,19 +296,19 @@ namespace API
             m_SoundEffectVolume = soundEffectVolume;
         }
 
-        public void SetFireBool(bool fireBool)
-        {
-            m_FireBool = fireBool;
-        }
-
         public void SetSmokeBool(bool smokeBool)
         {
             m_SmokeBool = smokeBool;
         }
 
-        public void SetExtinguisherBool(bool extinguisherBool)
+        public void SetFireBool(bool fireBool)
         {
-            m_ExtinguisherBool = extinguisherBool;
+            m_FireBool = fireBool;
+        }
+
+        public void SetFireExtinguisherBool(bool extinguisherBool)
+        {
+            m_FireExtinguisherBool = extinguisherBool;
         }
     }
 

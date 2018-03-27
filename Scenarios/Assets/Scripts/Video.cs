@@ -8,12 +8,16 @@ public class Video : MonoBehaviour
 
     private VideoPlayer videoPlayer;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
+    }
 
-        videoPlayer.Play();
+    private void OnEnable()
+    {
+        videoPlayer.url = Global.m_VideoPath;
+
+        videoPlayer.Prepare();
     }
 
     void StartChoices(VideoPlayer temporaryVideoPlayer)
@@ -24,16 +28,26 @@ public class Video : MonoBehaviour
         {
             fireExtinguisherCanvas.SetActive(false);
         }
+
+        videoPlayer.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (videoPlayer.isPrepared && !videoPlayer.isPlaying)
+        {
+            videoPlayer.Play();
+        }
+
         videoPlayer.loopPointReached += StartChoices;
     }
 
     private void OnDestroy()
     {
-        videoPlayer.Stop();
+        if (videoPlayer.isPlaying)
+        {
+            videoPlayer.Stop();
+        }
     }
 }
