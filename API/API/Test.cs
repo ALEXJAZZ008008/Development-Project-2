@@ -9,9 +9,9 @@ namespace API
         {
             ScenarioList scenarioList = new ScenarioList();
 
-            Scenario scenarioOne = new Scenario(new List<Choice>(), "videoPath", "ambientSoundPath", "soundEffectPath", "scenarioText", 0, 0, 0, true, false, false);
-            Scenario scenarioTwo = new Scenario(new List<Choice>(), "Scenarios", "Scenarios", "Scenarios", "Scenarios", 1, 2, 3, false, true, false);
-            Scenario scenarioThree = new Scenario(new List<Choice>(), "Alex", "Alexander", "Alexander Whitehead", "Alexander Charles Whitehead", 10, 400, 8000, true, false, true);
+            Scenario scenarioOne = new Scenario(new List<Choice>(), "videoPath", "ambientSoundPath", "narrationPath", "soundEffectPath", "scenarioText", "scenarioChoiceText", 0.0f, 0.0f, 0.0f, 0.0f, true, false, false);
+            Scenario scenarioTwo = new Scenario(new List<Choice>(), "Scenarios", "Scenarios", "Scenarios", "Scenarios", "Scenarios", "Scenarios", 1.1f, 2.22f, 3.333f, 4.4444f, false, true, false);
+            Scenario scenarioThree = new Scenario(new List<Choice>(), "Alex", "Alexander", "Alexander Whitehead", "Alexander Charles Whitehead", "Alexander Charles Whitehead", "Alexander Charles Whitehead 1234567890!\"£$%^&*()-=_+[];'#,./{}:@~<>?\\|`¬", 10.01f, 200.002f, 40000.00004f, 800000000.000000008f, true, false, true);
 
             Choice choiceOne = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
 

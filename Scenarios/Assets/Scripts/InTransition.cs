@@ -2,7 +2,9 @@
 
 public class InTransition : MonoBehaviour
 {
-    public GameObject videoPlayer;
+    public GameObject audioVisual;
+    public GameObject scenarioText;
+    public GameObject metricsText;
     public float pauseLength;
     public float speed;
 
@@ -17,7 +19,9 @@ public class InTransition : MonoBehaviour
 
     private void OnEnable()
     {
-        videoPlayer.SetActive(true);
+        audioVisual.SetActive(true);
+
+        scenarioText.SetActive(true);
 
         pause = 0.0f;
     }
@@ -31,6 +35,11 @@ public class InTransition : MonoBehaviour
         }
         else
         {
+            if (scenarioText.activeSelf)
+            {
+                scenarioText.SetActive(false);
+            }
+
             Color colour = material.color;
 
             if (colour.a > 0.0f)
@@ -53,5 +62,7 @@ public class InTransition : MonoBehaviour
         colour.a = 1.0f;
 
         material.color = colour;
+
+        metricsText.SetActive(true);
     }
 }

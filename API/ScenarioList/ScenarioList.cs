@@ -53,6 +53,12 @@ namespace API
 
         /// <summary>
         /// If null string, no sound. 
+        /// Indicates the file path for the narration file for the scenario.
+        /// </summary>
+        private string m_NarrationPath;
+
+        /// <summary>
+        /// If null string, no sound. 
         /// Indicates the file path for the sound effect file for the scenario.
         /// </summary>
         private string m_SoundEffectPath;
@@ -63,19 +69,29 @@ namespace API
         private string m_ScenarioText;
 
         /// <summary>
+        /// Null indicates no scenario choice text.
+        /// </summary>
+        private string m_ScenarioChoiceText;
+
+        /// <summary>
         /// Sets emergency lighting intensity.
         /// </summary>
-        private int m_LightingIntensity;
+        private float m_LightingIntensity;
 
         /// <summary>
         /// The ambient sound volume as a percentage (i.e. between 1 and 100).
         /// </summary>
-        private int m_AmbientVolume;
+        private float m_AmbientSoundVolume;
+
+        /// <summary>
+        /// The narration volume as a percentage (i.e. between 1 and 100).
+        /// </summary>
+        private float m_NarrationVolume;
 
         /// <summary>
         /// The sound effect volume as a percentage (i.e. between 1 and 100).
         /// </summary>
-        private int m_EffectVolume;
+        private float m_SoundEffectVolume;
 
         /// <summary>
         /// Indicates the presence of a fire effect in the scenario.
@@ -98,12 +114,15 @@ namespace API
 
             m_VideoPath = string.Empty;
             m_AmbientSoundPath = string.Empty;
+            m_NarrationPath = string.Empty;
             m_SoundEffectPath = string.Empty;
             m_ScenarioText = string.Empty;
+            m_ScenarioChoiceText = string.Empty;
 
-            m_LightingIntensity = 0;
-            m_AmbientVolume = 0;
-            m_EffectVolume = 0;
+            m_LightingIntensity = 0.0f;
+            m_AmbientSoundVolume = 0.0f;
+            m_NarrationVolume = 0.0f;
+            m_SoundEffectVolume = 0.0f;
 
             m_FireBool = false;
             m_SmokeBool = false;
@@ -116,30 +135,36 @@ namespace API
 
             m_VideoPath = scenario.GetVideoPath();
             m_AmbientSoundPath = scenario.GetAmbientSoundPath();
+            m_NarrationPath = scenario.GetNarrationPath();
             m_SoundEffectPath = scenario.GetSoundEffectPath();
             m_ScenarioText = scenario.GetScenarioText();
+            m_ScenarioChoiceText = scenario.GetScenarioChoiceText();
 
             m_LightingIntensity = scenario.GetLightingIntensity();
-            m_AmbientVolume = scenario.GetAmbientVolume();
-            m_EffectVolume = scenario.GetEffectVolume();
+            m_AmbientSoundVolume = scenario.GetAmbientSoundVolume();
+            m_NarrationVolume = scenario.GetNarrationVolume();
+            m_SoundEffectVolume = scenario.GetSoundEffectVolume();
 
             m_FireBool = scenario.GetFireBool();
             m_SmokeBool = scenario.GetSmokeBool();
             m_ExtinguisherBool = scenario.GetExtinguisherBool();
         }
 
-        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string soundEffectPath, string scenarioText, int lightingIntensity, int ambientVolume, int effectVolume, bool fireBool, bool smokeBool, bool extinguisherBool)
+        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string scenarioText, string scenarioChoiceText, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, bool fireBool, bool smokeBool, bool extinguisherBool)
         {
             m_Choices = choices;
 
             m_VideoPath = videoPath;
             m_AmbientSoundPath = ambientSoundPath;
+            m_NarrationPath = narrationPath;
             m_SoundEffectPath = soundEffectPath;
             m_ScenarioText = scenarioText;
+            m_ScenarioChoiceText = scenarioChoiceText;
 
             m_LightingIntensity = lightingIntensity;
-            m_AmbientVolume = ambientVolume;
-            m_EffectVolume = effectVolume;
+            m_AmbientSoundVolume = ambientSoundVolume;
+            m_NarrationVolume = narrationVolume;
+            m_SoundEffectVolume = soundEffectVolume;
 
             m_FireBool = fireBool;
             m_SmokeBool = smokeBool;
@@ -161,6 +186,11 @@ namespace API
             return m_AmbientSoundPath;
         }
 
+        public string GetNarrationPath()
+        {
+            return m_NarrationPath;
+        }
+
         public string GetSoundEffectPath()
         {
             return m_SoundEffectPath;
@@ -171,19 +201,29 @@ namespace API
             return m_ScenarioText;
         }
 
-        public int GetLightingIntensity()
+        public string GetScenarioChoiceText()
+        {
+            return m_ScenarioChoiceText;
+        }
+
+        public float GetLightingIntensity()
         {
             return m_LightingIntensity;
         }
 
-        public int GetAmbientVolume()
+        public float GetAmbientSoundVolume()
         {
-            return m_AmbientVolume;
+            return m_AmbientSoundVolume;
         }
 
-        public int GetEffectVolume()
+        public float GetNarrationVolume()
         {
-            return m_EffectVolume;
+            return m_NarrationVolume;
+        }
+
+        public float GetSoundEffectVolume()
+        {
+            return m_SoundEffectVolume;
         }
 
         public bool GetFireBool()
@@ -216,6 +256,11 @@ namespace API
             m_AmbientSoundPath = ambientSoundPath;
         }
 
+        public void SetNarrationPath(string narrationPath)
+        {
+            m_NarrationPath = narrationPath;
+        }
+
         public void SetSoundEffectPath(string soundEffectPath)
         {
             m_SoundEffectPath = soundEffectPath;
@@ -226,14 +271,29 @@ namespace API
             m_ScenarioText = scenarioText;
         }
 
-        public void SetLightingIntensity(int lightingIntensity)
+        public void SetScenarioChoiceText(string scenarioChoiceText)
+        {
+            m_ScenarioChoiceText = scenarioChoiceText;
+        }
+
+        public void SetLightingIntensity(float lightingIntensity)
         {
             m_LightingIntensity = lightingIntensity;
         }
 
-        public void SetAmbientVolume(int ambientVolume)
+        public void SetAmbientSoundVolume(float ambientSoundVolume)
         {
-            m_AmbientVolume = ambientVolume;
+            m_AmbientSoundVolume = ambientSoundVolume;
+        }
+
+        public void SetNarrationVolume(float narrationVolume)
+        {
+            m_NarrationVolume = narrationVolume;
+        }
+
+        public void SetSoundEffectVolume(float soundEffectVolume)
+        {
+            m_SoundEffectVolume = soundEffectVolume;
         }
 
         public void SetFireBool(bool fireBool)

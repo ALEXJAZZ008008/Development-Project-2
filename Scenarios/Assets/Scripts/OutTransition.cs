@@ -3,6 +3,7 @@
 public class OutTransition : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject[] textObjects;
     public GameObject inTransition;
     public float speed;
 
@@ -13,9 +14,20 @@ public class OutTransition : MonoBehaviour
     {
         material = GetComponent<Renderer>().material;
 	}
-	
-	// Update is called once per frame
-	void Update()
+
+    private void OnEnable()
+    {
+        for (int i = 0; i < textObjects.Length; i++)
+        {
+            if (textObjects[i].activeSelf)
+            {
+                textObjects[i].SetActive(false);
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         Color colour = material.color;
 
@@ -29,7 +41,10 @@ public class OutTransition : MonoBehaviour
             {
                 for(int i = 0; i < objects.Length; i++)
                 {
-                    objects[i].SetActive(false);
+                    if (objects[i].activeSelf)
+                    {
+                        objects[i].SetActive(false);
+                    }
                 }
             }
         }
