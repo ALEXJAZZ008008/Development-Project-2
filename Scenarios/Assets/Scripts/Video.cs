@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Video;
 
-public class VideoSelector : MonoBehaviour
+public class Video : MonoBehaviour
 {
     public GameObject scenarioChoiceText;
     public GameObject fireExtinguisherCanvas;

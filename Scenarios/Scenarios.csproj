@@ -304,7 +304,7 @@
     <Compile Include="Assets\Scripts\EmergencyLight.cs" />
     <Compile Include="Assets\Scripts\InTransition.cs" />
     <Compile Include="Assets\Scripts\OutTransition.cs" />
-    <Compile Include="Assets\Scripts\VideoSelector.cs" />
+    <Compile Include="Assets\Scripts\Video.cs" />
     <Compile Include="Assets\Shaders\SkyboxPanoramicShader\SkyboxPanoramicBetaShaderGUI.cs" />
   </ItemGroup>
   <ItemGroup>
