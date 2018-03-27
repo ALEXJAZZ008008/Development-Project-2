@@ -9,13 +9,13 @@ public class OutTransition : MonoBehaviour
 
     private Material material;
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
     {
         material = GetComponent<Renderer>().material;
-	}
+    }
 
-    private void OnEnable()
+    void OnEnable()
     {
         for (int i = 0; i < textObjects.Length; i++)
         {
@@ -37,9 +37,9 @@ public class OutTransition : MonoBehaviour
 
             material.color = colour;
 
-            if(colour.a >= 1.0f)
+            if (colour.a >= 1.0f)
             {
-                for(int i = 0; i < objects.Length; i++)
+                for (int i = 0; i < objects.Length; i++)
                 {
                     if (objects[i].activeSelf)
                     {
@@ -48,7 +48,7 @@ public class OutTransition : MonoBehaviour
                 }
             }
         }
-	}
+    }
 
     void OnDisable()
     {

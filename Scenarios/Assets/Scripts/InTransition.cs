@@ -17,7 +17,7 @@ public class InTransition : MonoBehaviour
         material = GetComponent<Renderer>().material;
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         audioVisual.SetActive(true);
 

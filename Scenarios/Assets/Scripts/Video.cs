@@ -20,7 +20,7 @@ public class Video : MonoBehaviour
     {
         scenarioChoiceText.SetActive(true);
 
-        if(fireExtinguisherCanvas.activeSelf)
+        if (fireExtinguisherCanvas.activeSelf)
         {
             fireExtinguisherCanvas.SetActive(false);
         }
