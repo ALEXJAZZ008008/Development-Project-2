@@ -6,6 +6,8 @@ public class AudioVisual : MonoBehaviour
 {
     public GameObject video;
     public GameObject fireExtinguisherCanvas;
+    public GameObject crosshair;
+    public GameObject choiceCanvas;
     public GameObject scenarioChoiceText;
     public GameObject ambientSound;
     public GameObject narration;
@@ -121,6 +123,8 @@ public class AudioVisual : MonoBehaviour
             fireExtinguisherCanvas.SetActive(false);
         }
 
+        crosshair.SetActive(true);
+        choiceCanvas.SetActive(true);
         scenarioChoiceText.SetActive(true);
 
         videoPlayer.Stop();

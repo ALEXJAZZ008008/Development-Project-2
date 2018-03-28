@@ -305,6 +305,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\AudioVisual.cs" />
     <Compile Include="Assets\Scripts\CameraControler.cs" />
+    <Compile Include="Assets\Scripts\Choices.cs" />
     <Compile Include="Assets\Scripts\EmergencyLight.cs" />
     <Compile Include="Assets\Scripts\InTransition.cs" />
     <Compile Include="Assets\Scripts\JSONParser.cs" />

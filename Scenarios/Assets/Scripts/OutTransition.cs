@@ -4,7 +4,7 @@ public class OutTransition : MonoBehaviour
 {
     public GameObject inTransition;
     public GameObject[] objects;
-    public GameObject[] textObjects;
+    public GameObject[] earlyObjects;
     public float speed;
 
     private Material material;
@@ -21,11 +21,11 @@ public class OutTransition : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        for (int i = 0; i < textObjects.Length; i++)
+        for (int i = 0; i < earlyObjects.Length; i++)
         {
-            if (textObjects[i].activeSelf)
+            if (earlyObjects[i].activeSelf)
             {
-                textObjects[i].SetActive(false);
+                earlyObjects[i].SetActive(false);
             }
         }
     }
