@@ -2,8 +2,6 @@
 
 public class EmergencyLight : MonoBehaviour
 {
-    public float speed;
-
     private Material material;
     private bool alphaAscending;
 
@@ -23,7 +21,7 @@ public class EmergencyLight : MonoBehaviour
     {
         Color colour = material.color;
 
-        float alphaIncrement = speed * Time.deltaTime;
+        float alphaIncrement = Global.m_LightingIntensity * Time.deltaTime;
 
         if (alphaAscending)
         {

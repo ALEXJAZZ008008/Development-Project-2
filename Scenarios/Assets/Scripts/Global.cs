@@ -47,7 +47,7 @@ public class Global : MonoBehaviour
     private int currentScenario;
 
     private void DefaultScenario()
-    {        
+    {
         m_VideoPath = Application.dataPath + "/Videos/Stationary1.mp4";
         m_AmbientSoundPath = Application.dataPath + "/Audio/AmbientHospital.wav";
         m_NarrationPath = Application.dataPath + "/Audio/Narration.wav";
@@ -143,9 +143,15 @@ public class Global : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentScenario != m_NextScenario)
+        if (currentScenario != m_NextScenario)
         {
             currentScenario = m_NextScenario;
+
+            if (currentScenario < 0 || currentScenario >= scenarioList.GetScenarios().Count)
+            {
+                currentScenario = 0;
+                m_NextScenario = 0;
+            }
 
             UpdateCurrentScenario();
         }

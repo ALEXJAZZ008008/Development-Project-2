@@ -2,9 +2,9 @@
 
 public class OutTransition : MonoBehaviour
 {
+    public GameObject inTransition;
     public GameObject[] objects;
     public GameObject[] textObjects;
-    public GameObject inTransition;
     public float speed;
 
     private Material material;
@@ -16,6 +16,11 @@ public class OutTransition : MonoBehaviour
 
     void OnEnable()
     {
+        if (inTransition.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+
         for (int i = 0; i < textObjects.Length; i++)
         {
             if (textObjects[i].activeSelf)
@@ -47,6 +52,8 @@ public class OutTransition : MonoBehaviour
                 }
 
                 Global.m_NextScenario++;
+
+                gameObject.SetActive(false);
             }
         }
     }

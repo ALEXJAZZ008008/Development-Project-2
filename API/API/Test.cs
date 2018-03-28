@@ -16,19 +16,14 @@ namespace API
 
             directoryPath = Regex.Split(directoryPath, "/API/API/bin/Debug/API.exe")[0];
 
-            string videoPath = "/Scenarios/Assets/Videos/Stationary1.mp4";
-            string ambientSoundPath = "/Scenarios/Assets/Audio/AmbientHospital.wav";
-            string narrationPath = "/Scenarios/Assets/Audio/Narration.wav";
-            string soundEffectPath = "/Scenarios/Assets/Audio/AlarmSound.wav";
-
             ScenarioList scenarioList = new ScenarioList();
 
-            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioSix = new Scenario(new List<Choice>(), directoryPath + videoPath, directoryPath + ambientSoundPath, directoryPath + narrationPath, directoryPath + soundEffectPath, "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary2.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary3.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary4.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Trolly1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioSix = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Walking1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
 
             Choice choiceOne = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
 

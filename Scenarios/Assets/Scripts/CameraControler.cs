@@ -3,6 +3,7 @@
 public class CameraControler : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject outTransition;
     public Vector3 speed;
 
     private Vector3 rotation;
@@ -13,7 +14,7 @@ public class CameraControler : MonoBehaviour
         rotation = new Vector3();
     }
 
-    private void UpdateChildOnKeyPress(GameObject child, KeyCode keyDown)
+    private void UpdateObjectActivityOnKeyPress(GameObject child, KeyCode keyDown)
     {
         if (Input.GetKeyDown(keyDown))
         {
@@ -56,12 +57,16 @@ public class CameraControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateChildOnKeyPress(objects[0], KeyCode.T);
-        UpdateChildOnKeyPress(objects[1], KeyCode.Y);
-        UpdateChildOnKeyPress(objects[2], KeyCode.U);
-        UpdateChildOnKeyPress(objects[3], KeyCode.I);
-        UpdateChildOnKeyPress(objects[4], KeyCode.O);
-        UpdateChildOnKeyPress(objects[5], KeyCode.P);
+        UpdateObjectActivityOnKeyPress(objects[0], KeyCode.T);
+        UpdateObjectActivityOnKeyPress(objects[1], KeyCode.Y);
+        UpdateObjectActivityOnKeyPress(objects[2], KeyCode.U);
+        UpdateObjectActivityOnKeyPress(objects[3], KeyCode.I);
+        UpdateObjectActivityOnKeyPress(objects[4], KeyCode.O);
+
+        if (!outTransition.activeSelf)
+        {
+            UpdateObjectActivityOnKeyPress(outTransition, KeyCode.P);
+        }
 
         UpdateCamera();
     }

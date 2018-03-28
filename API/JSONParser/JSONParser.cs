@@ -16,7 +16,7 @@ namespace API
 
         public static void JSONToTObject<T>(string json, ref T tObject)
         {
-            tObject =  JsonConvert.DeserializeObject<T>(json, new JsonSerializerSettings { ContractResolver = new MyContractResolver(), PreserveReferencesHandling = PreserveReferencesHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize });
+            tObject = JsonConvert.DeserializeObject<T>(json, new JsonSerializerSettings { ContractResolver = new MyContractResolver(), PreserveReferencesHandling = PreserveReferencesHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize });
         }
     }
 

@@ -2,6 +2,7 @@
 
 public class InTransition : MonoBehaviour
 {
+    public GameObject outTransition;
     public GameObject audioVisual;
     public GameObject scenarioText;
     public GameObject metricsText;
@@ -18,9 +19,13 @@ public class InTransition : MonoBehaviour
 
     void OnEnable()
     {
+        if (outTransition.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+
         Global.m_UpdateScenario = true;
 
-        audioVisual.SetActive(true);
         scenarioText.SetActive(true);
 
         pause = 0.0f;
@@ -31,6 +36,11 @@ public class InTransition : MonoBehaviour
     {
         if (pause <= pauseLength)
         {
+            if (!Global.m_UpdateScenario && !audioVisual.activeSelf)
+            {
+                audioVisual.SetActive(true);
+            }
+
             pause += 1.0f * Time.deltaTime;
         }
         else
