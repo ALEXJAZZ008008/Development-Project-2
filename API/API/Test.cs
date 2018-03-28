@@ -18,59 +18,62 @@ namespace API
 
             ScenarioList scenarioList = new ScenarioList();
 
-            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary2.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary3.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary4.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Trolly1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
-            Scenario scenarioSix = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Walking1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText", "scenarioChoiceText", 0.25f, 0.75f, 1.0f, 0.75f, false, false, false);
+            Scenario scenarioZero = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText0", "scenarioChoiceText0", 3.0f, 0.25f, 0.75f, 1.0f, 0.5f, false, false, false, false, false);
+            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary2.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientRadio.wav", string.Empty, directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText1", "scenarioChoiceText1", 3.0f, 0.25f, 0.3f, 0.0f, 0.5f, true, false, false, false, false);
+            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary3.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText2", "scenarioChoiceText2", 3.0f, 0.25f, 0.75f, 1.0f, 0.5f, true, true, false, false, false);
+            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary4.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientRadio.wav", string.Empty, directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText3", "scenarioChoiceText3", 3.0f, 0.25f, 0.3f, 0.0f, 0.5f, true, true, false, true, true);
+            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Trolly1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText4", "scenarioChoiceText4", 3.0f, 0.25f, 0.75f, 1.0f, 0.5f, true, true, true, true, true);
+            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Walking1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientRadio.wav", string.Empty, directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", "scenarioText5", "scenarioChoiceText5", 3.0f, 0.25f, 0.3f, 1.0f, 0.5f, false, false, false, false, false);
+            Scenario scenarioSix = new Scenario(new List<Choice>(), string.Empty, string.Empty, string.Empty, string.Empty, "scenarioText6", "scenarioChoiceText6", 3.0f, 0.25f, 0.75f, 1.0f, 0.75f, false, false, false, false, false);
 
-            Choice choiceOne = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
+            Choice choiceZero = new Choice(1, "Scenario 1", "Went to 1", 0);
+
+            scenarioZero.GetChoices().Add(choiceZero);
+
+            Choice choiceOne = new Choice(0, "Scenario 0", "Went to 0", -1);
+            Choice choiceTwo = new Choice(2, "Scenario 2", "Went to 2", 1);
 
             scenarioOne.GetChoices().Add(choiceOne);
+            scenarioOne.GetChoices().Add(choiceTwo);
 
-            Choice choiceTwo = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
-            Choice choiceThree = new Choice(scenarioThree, "choiceText", "feedbackText", 0);
+            Choice choiceThree = new Choice(0, "Scenario 0", "Went to 0", -1);
+            Choice choiceFour = new Choice(1, "Scenario 1", "Went to 1", -1);
+            Choice choiceFive = new Choice(3, "Scenario 3", "Went to 3", 1);
 
-            scenarioTwo.GetChoices().Add(choiceTwo);
             scenarioTwo.GetChoices().Add(choiceThree);
+            scenarioTwo.GetChoices().Add(choiceFour);
+            scenarioTwo.GetChoices().Add(choiceFive);
 
-            Choice choiceFour = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
-            Choice choiceFive = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
-            Choice choiceSix = new Choice(scenarioFour, "choiceText", "feedbackText", 0);
+            Choice choiceSix = new Choice(0, "Scenario 0", "Went to 0", -1);
+            Choice choiceSeven = new Choice(1, "Scenario 1", "Went to 1", -1);
+            Choice choiceEight = new Choice(2, "Scenario 2", "Went to 2", -1);
+            Choice choiceNine = new Choice(4, "Scenario 4", "Went to 4", 1);
 
-            scenarioThree.GetChoices().Add(choiceFour);
-            scenarioThree.GetChoices().Add(choiceFive);
             scenarioThree.GetChoices().Add(choiceSix);
+            scenarioThree.GetChoices().Add(choiceSeven);
+            scenarioThree.GetChoices().Add(choiceEight);
+            scenarioThree.GetChoices().Add(choiceNine);
 
-            Choice choiceSeven = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
-            Choice choiceEight = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
-            Choice choiceNine = new Choice(scenarioThree, "choiceText", "feedbackText", 0);
-            Choice choiceTen = new Choice(scenarioFive, "choiceText", "feedbackText", 0);
+            Choice choiceTen = new Choice(0, "Scenario 0", "Went to 0", -1);
+            Choice choiceEleven = new Choice(1, "Scenario 1", "Went to 1", -1);
+            Choice choiceTwelve = new Choice(2, "Scenario 2", "Went to 2", -1);
+            Choice choiceThirteen = new Choice(3, "Scenario 3", "Went to 3", -1);
+            Choice choiceFourteen = new Choice(5, "Scenario 5", "Went to 5", 1);
 
-            scenarioFour.GetChoices().Add(choiceSeven);
-            scenarioFour.GetChoices().Add(choiceEight);
-            scenarioFour.GetChoices().Add(choiceNine);
             scenarioFour.GetChoices().Add(choiceTen);
+            scenarioFour.GetChoices().Add(choiceEleven);
+            scenarioFour.GetChoices().Add(choiceTwelve);
+            scenarioFour.GetChoices().Add(choiceThirteen);
+            scenarioFour.GetChoices().Add(choiceFourteen);
 
-            Choice choiceEleven = new Choice(scenarioOne, "choiceText", "feedbackText", 0);
-            Choice choiceTwelve = new Choice(scenarioTwo, "choiceText", "feedbackText", 0);
-            Choice choiceThirteen = new Choice(scenarioThree, "choiceText", "feedbackText", 0);
-            Choice choiceFourteen = new Choice(scenarioFour, "choiceText", "feedbackText", 0);
-            Choice choiceFifteen = new Choice(scenarioSix, "choiceText", "feedbackText", 0);
+            Choice choiceFifteen = new Choice(6, "Scenario 6", "Went to 6", 0);
 
-            scenarioFive.GetChoices().Add(choiceEleven);
-            scenarioFive.GetChoices().Add(choiceTwelve);
-            scenarioFive.GetChoices().Add(choiceThirteen);
-            scenarioFive.GetChoices().Add(choiceFourteen);
-            scenarioFive.GetChoices().Add(choiceFifteen);
-
+            scenarioList.GetScenarios().Add(scenarioZero);
             scenarioList.GetScenarios().Add(scenarioOne);
             scenarioList.GetScenarios().Add(scenarioTwo);
             scenarioList.GetScenarios().Add(scenarioThree);
             scenarioList.GetScenarios().Add(scenarioFour);
             scenarioList.GetScenarios().Add(scenarioFive);
-            scenarioList.GetScenarios().Add(scenarioSix);
 
             string json = string.Empty;
 

@@ -51,7 +51,7 @@ public class OutTransition : MonoBehaviour
                     }
                 }
 
-                Global.m_NextScenario++;
+                Scenarios.m_NextScenario++;
 
                 gameObject.SetActive(false);
             }

@@ -9,10 +9,10 @@ public class UpdateMetricsText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Global.m_Time += Time.deltaTime;
+        Scenarios.m_Time += Time.deltaTime;
 
-        scoreText.text = "Score: " + Global.m_Score.ToString();
+        scoreText.text = "Score: " + Scenarios.m_Score.ToString();
 
-        timerText.text = "Time: " + ((int)Global.m_Time).ToString();
+        timerText.text = "Time: " + ((int)Scenarios.m_Time).ToString();
     }
 }

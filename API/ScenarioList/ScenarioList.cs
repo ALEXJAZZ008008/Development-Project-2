@@ -74,6 +74,11 @@ namespace API
         private string m_ScenarioChoiceText;
 
         /// <summary>
+        /// Sets in transition length.
+        /// </summary>
+        private float m_InTransitionLength;
+
+        /// <summary>
         /// Sets emergency lighting intensity.
         /// </summary>
         private float m_LightingIntensity;
@@ -108,6 +113,16 @@ namespace API
         /// </summary>
         private bool m_FireExtinguisherBool;
 
+        /// <summary>
+        /// Indicates that the emergency light should be activated. 
+        /// </summary>
+        private bool m_EmergencyLightBool;
+
+        /// <summary>
+        /// Indicates that the sound effect should be activated. 
+        /// </summary>
+        private bool m_SoundEffectBool;
+
         public Scenario()
         {
             m_Choices = new List<Choice>();
@@ -119,6 +134,7 @@ namespace API
             m_ScenarioText = string.Empty;
             m_ScenarioChoiceText = string.Empty;
 
+            m_InTransitionLength = 0.0f;
             m_LightingIntensity = 0.0f;
             m_AmbientSoundVolume = 0.0f;
             m_NarrationVolume = 0.0f;
@@ -127,6 +143,8 @@ namespace API
             m_SmokeBool = false;
             m_FireBool = false;
             m_FireExtinguisherBool = false;
+            m_EmergencyLightBool = false;
+            m_SoundEffectBool = false;
         }
 
         public Scenario(Scenario scenario)
@@ -140,6 +158,7 @@ namespace API
             m_ScenarioText = scenario.GetScenarioText();
             m_ScenarioChoiceText = scenario.GetScenarioChoiceText();
 
+            m_InTransitionLength = scenario.GetInTransitionLength();
             m_LightingIntensity = scenario.GetLightingIntensity();
             m_AmbientSoundVolume = scenario.GetAmbientSoundVolume();
             m_NarrationVolume = scenario.GetNarrationVolume();
@@ -148,9 +167,11 @@ namespace API
             m_SmokeBool = scenario.GetSmokeBool();
             m_FireBool = scenario.GetFireBool();
             m_FireExtinguisherBool = scenario.GetFireExtinguisherBool();
+            m_EmergencyLightBool = scenario.GetEmergencyLightBool();
+            m_SoundEffectBool = scenario.GetSoundEffectBool();
         }
 
-        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string scenarioText, string scenarioChoiceText, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, bool fireBool, bool smokeBool, bool fireExtinguisherBool)
+        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string scenarioText, string scenarioChoiceText, float inTransitionLength, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, bool smokeBool, bool fireBool, bool fireExtinguisherBool, bool emergencyLightBool, bool soundEffectBool)
         {
             m_Choices = choices;
 
@@ -161,6 +182,7 @@ namespace API
             m_ScenarioText = scenarioText;
             m_ScenarioChoiceText = scenarioChoiceText;
 
+            m_InTransitionLength = inTransitionLength;
             m_LightingIntensity = lightingIntensity;
             m_AmbientSoundVolume = ambientSoundVolume;
             m_NarrationVolume = narrationVolume;
@@ -169,6 +191,8 @@ namespace API
             m_SmokeBool = smokeBool;
             m_FireBool = fireBool;
             m_FireExtinguisherBool = fireExtinguisherBool;
+            m_EmergencyLightBool = emergencyLightBool;
+            m_SoundEffectBool = soundEffectBool;
         }
 
         public List<Choice> GetChoices()
@@ -206,6 +230,11 @@ namespace API
             return m_ScenarioChoiceText;
         }
 
+        public float GetInTransitionLength()
+        {
+            return m_InTransitionLength;
+        }
+
         public float GetLightingIntensity()
         {
             return m_LightingIntensity;
@@ -239,6 +268,16 @@ namespace API
         public bool GetFireExtinguisherBool()
         {
             return m_FireExtinguisherBool;
+        }
+
+        public bool GetEmergencyLightBool()
+        {
+            return m_EmergencyLightBool;
+        }
+
+        public bool GetSoundEffectBool()
+        {
+            return m_SoundEffectBool;
         }
 
         public void SetChoices(List<Choice> choices)
@@ -276,6 +315,11 @@ namespace API
             m_ScenarioChoiceText = scenarioChoiceText;
         }
 
+        public void SetInTransitionLength(float inTransitionLength)
+        {
+            m_InTransitionLength = inTransitionLength;
+        }
+
         public void SetLightingIntensity(float lightingIntensity)
         {
             m_LightingIntensity = lightingIntensity;
@@ -310,14 +354,24 @@ namespace API
         {
             m_FireExtinguisherBool = extinguisherBool;
         }
+
+        public void SetEmergencyLightBool(bool emergencyLightBool)
+        {
+            m_EmergencyLightBool = emergencyLightBool;
+        }
+
+        public void SetSoundEffectBool(bool soundEffectBool)
+        {
+            m_SoundEffectBool = soundEffectBool;
+        }
     }
 
     public class Choice
     {
         /// <summary>
-        /// The scenario that the choice should. 
+        /// The scenario that the choice should go to. 
         /// </summary>
-        private Scenario m_NextScenario;
+        private int m_NextScenarioIndex;
 
         /// <summary>
         /// The choice associated with the text.
@@ -338,7 +392,7 @@ namespace API
 
         public Choice()
         {
-            m_NextScenario = null;
+            m_NextScenarioIndex = 0;
 
             m_ChoiceText = string.Empty;
             m_FeedbackText = string.Empty;
@@ -348,7 +402,7 @@ namespace API
 
         public Choice(Choice choice)
         {
-            m_NextScenario = choice.GetNextScenario();
+            m_NextScenarioIndex = choice.GetNextScenarioIndex();
 
             m_ChoiceText = choice.GetChoiceText();
             m_FeedbackText = choice.GetFeedbackText();
@@ -356,9 +410,9 @@ namespace API
             m_Score = choice.GetScore();
         }
 
-        public Choice(Scenario nextScenario, string choiceText, string feedbackText, int score)
+        public Choice(int nextScenarioIndex, string choiceText, string feedbackText, int score)
         {
-            m_NextScenario = nextScenario;
+            m_NextScenarioIndex = nextScenarioIndex;
 
             m_ChoiceText = choiceText;
             m_FeedbackText = feedbackText;
@@ -366,9 +420,9 @@ namespace API
             m_Score = score;
         }
 
-        public Scenario GetNextScenario()
+        public int GetNextScenarioIndex()
         {
-            return m_NextScenario;
+            return m_NextScenarioIndex;
         }
 
         public string GetChoiceText()
@@ -386,9 +440,9 @@ namespace API
             return m_Score;
         }
 
-        public void SetNextScenario(Scenario nextScenario)
+        public void SetNextScenarioIndex(int nextScenarioIndex)
         {
-            m_NextScenario = nextScenario;
+            m_NextScenarioIndex = nextScenarioIndex;
         }
 
         public void SetChoiceText(string choiceText)

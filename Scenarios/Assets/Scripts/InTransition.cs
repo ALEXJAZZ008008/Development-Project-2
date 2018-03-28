@@ -6,7 +6,6 @@ public class InTransition : MonoBehaviour
     public GameObject audioVisual;
     public GameObject scenarioText;
     public GameObject metricsText;
-    public float pauseLength;
     public float speed;
 
     private Material material;
@@ -24,7 +23,7 @@ public class InTransition : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        Global.m_UpdateScenario = true;
+        Scenarios.m_UpdateScenario = true;
 
         scenarioText.SetActive(true);
 
@@ -34,9 +33,9 @@ public class InTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pause <= pauseLength)
+        if (pause <= Scenarios.m_InTransitionLength)
         {
-            if (!Global.m_UpdateScenario && !audioVisual.activeSelf)
+            if (!Scenarios.m_UpdateScenario && !audioVisual.activeSelf)
             {
                 audioVisual.SetActive(true);
             }

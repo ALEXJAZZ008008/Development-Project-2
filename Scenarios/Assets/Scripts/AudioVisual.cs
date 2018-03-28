@@ -33,7 +33,7 @@ public class AudioVisual : MonoBehaviour
 
     IEnumerator LoadAmbientSoundCoroutine()
     {
-        WWW www = new WWW(Global.m_AmbientSoundPath);
+        WWW www = new WWW(Scenarios.m_AmbientSoundPath);
 
         yield return www;
 
@@ -44,7 +44,7 @@ public class AudioVisual : MonoBehaviour
 
     IEnumerator LoadNarrationCoroutine()
     {
-        WWW www = new WWW(Global.m_NarrationPath);
+        WWW www = new WWW(Scenarios.m_NarrationPath);
 
         yield return www;
 
@@ -55,7 +55,7 @@ public class AudioVisual : MonoBehaviour
 
     IEnumerator LoadSoundEffectCoroutine()
     {
-        WWW www = new WWW(Global.m_SoundEffectPath);
+        WWW www = new WWW(Scenarios.m_SoundEffectPath);
 
         yield return www;
 
@@ -66,19 +66,50 @@ public class AudioVisual : MonoBehaviour
     {
         videoPlayer.targetTexture.Release();
 
-        videoPlayer.url = Global.m_VideoPath;
+        if (Scenarios.m_VideoPath != string.Empty)
+        {
+            videoPlayer.url = Scenarios.m_VideoPath;
 
-        videoPlayer.Prepare();
+            videoPlayer.Prepare();
+        }
+        else
+        {
+            Scenarios.m_NextScenario = 0;
+            Scenarios.m_UpdateScenario = true;
+        }
 
-        StartCoroutine(LoadAmbientSoundCoroutine());
-        StartCoroutine(LoadNarrationCoroutine());
-        StartCoroutine(LoadSoundEffectCoroutine());
+        if (Scenarios.m_AmbientSoundPath != string.Empty)
+        {
+            StartCoroutine(LoadAmbientSoundCoroutine());
+        }
+        else
+        {
+            ambientSoundSource.Stop();
+        }
 
-        ambientSoundSource.volume = Global.m_AmbientSoundVolume;
-        narrationSource.volume = Global.m_NarrationVolume;
-        soundEffectSource.volume = Global.m_SoundEffectVolume;
-        fireSoundEffectSource.volume = Global.m_SoundEffectVolume;
-        fireExtinguisherSoundEffectSource.volume = Global.m_SoundEffectVolume;
+        if (Scenarios.m_NarrationPath != string.Empty)
+        {
+            StartCoroutine(LoadNarrationCoroutine());
+        }
+        else
+        {
+            narrationSource.Stop();
+        }
+
+        if (Scenarios.m_SoundEffectPath != string.Empty)
+        {
+            StartCoroutine(LoadSoundEffectCoroutine());
+        }
+        else
+        {
+            soundEffectSource.Stop();
+        }
+
+        ambientSoundSource.volume = Scenarios.m_AmbientSoundVolume;
+        narrationSource.volume = Scenarios.m_NarrationVolume;
+        soundEffectSource.volume = Scenarios.m_SoundEffectVolume;
+        fireSoundEffectSource.volume = Scenarios.m_SoundEffectVolume;
+        fireExtinguisherSoundEffectSource.volume = Scenarios.m_SoundEffectVolume;
     }
 
     void StartChoices(VideoPlayer temporaryVideoPlayer)

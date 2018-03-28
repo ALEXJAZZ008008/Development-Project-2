@@ -3,10 +3,17 @@
 public class CameraControler : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject soundEffect;
     public GameObject outTransition;
     public Vector3 speed;
 
+    private AudioSource soundEffectSource;
     private Vector3 rotation;
+
+    void Awake()
+    {
+        soundEffectSource = soundEffect.GetComponent<AudioSource>();
+    }
 
     // Use this for initialization
     void Start()
@@ -61,7 +68,23 @@ public class CameraControler : MonoBehaviour
         UpdateObjectActivityOnKeyPress(objects[1], KeyCode.Y);
         UpdateObjectActivityOnKeyPress(objects[2], KeyCode.U);
         UpdateObjectActivityOnKeyPress(objects[3], KeyCode.I);
-        UpdateObjectActivityOnKeyPress(objects[4], KeyCode.O);
+
+        UpdateObjectActivityOnKeyPress(soundEffect, KeyCode.O);
+
+        if(soundEffect.activeSelf)
+        {
+            if(!soundEffectSource.isPlaying)
+            {
+                soundEffectSource.Play();
+            }
+        }
+        else
+        {
+            if (soundEffectSource.isPlaying)
+            {
+                soundEffectSource.Stop();
+            }
+        }
 
         if (!outTransition.activeSelf)
         {

@@ -306,11 +306,11 @@
     <Compile Include="Assets\Scripts\AudioVisual.cs" />
     <Compile Include="Assets\Scripts\CameraControler.cs" />
     <Compile Include="Assets\Scripts\EmergencyLight.cs" />
-    <Compile Include="Assets\Scripts\Global.cs" />
     <Compile Include="Assets\Scripts\InTransition.cs" />
     <Compile Include="Assets\Scripts\JSONParser.cs" />
     <Compile Include="Assets\Scripts\OutTransition.cs" />
     <Compile Include="Assets\Scripts\ScenarioList.cs" />
+    <Compile Include="Assets\Scripts\Scenarios.cs" />
     <Compile Include="Assets\Scripts\UpdateMetricsText.cs" />
     <Compile Include="Assets\Shaders\SkyboxPanoramicShader\SkyboxPanoramicBetaShaderGUI.cs" />
   </ItemGroup>

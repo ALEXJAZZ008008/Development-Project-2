@@ -365,7 +365,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -4600,7 +4600,6 @@ MonoBehaviour:
   audioVisual: {fileID: 1910759426}
   scenarioText: {fileID: 1681917382}
   metricsText: {fileID: 910047248}
-  pauseLength: 3
   speed: 0.5
 --- !u!4 &1615828253 stripped
 Transform:
@@ -6007,7 +6006,7 @@ MonoBehaviour:
   - {fileID: 1656003954}
   - {fileID: 921051380}
   - {fileID: 1366939983}
-  - {fileID: 76853536}
+  soundEffect: {fileID: 76853536}
   outTransition: {fileID: 760932543}
   speed: {x: 2, y: 2, z: 0}
 --- !u!1 &2015380154
@@ -6491,6 +6490,8 @@ MonoBehaviour:
   smokeCanvas: {fileID: 1013887843}
   fireCanvas: {fileID: 1656003954}
   fireExtinguisherCanvas: {fileID: 921051380}
+  emergencyLight: {fileID: 1366939983}
+  soundEffect: {fileID: 76853536}
   defaultScenarioListJSON: {fileID: 4900000, guid: 524dec5b3e895e54383d654ee8fae378,
     type: 3}
   scenarioText: {fileID: 1681917384}
