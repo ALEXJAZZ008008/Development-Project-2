@@ -13,6 +13,10 @@ public class UpdateMetricsText : MonoBehaviour
 
         scoreText.text = "Score: " + Global.m_Score.ToString();
 
-        timerText.text = "Time: " + ((int)Global.m_Time).ToString();
+        // Crude conversion to a time format
+        int minutes = Mathf.FloorToInt(Global.m_Time / 60f);
+        int seconds = Mathf.FloorToInt(Global.m_Time - minutes * 60);
+
+        timerText.text = string.Format("Time: " + "{0:00}:{1:00}", minutes, seconds);
     }
 }
