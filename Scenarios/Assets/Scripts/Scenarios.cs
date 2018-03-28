@@ -30,6 +30,8 @@ public class Scenarios : MonoBehaviour
     public static bool m_EmergencyLightBool;
     public static bool m_SoundEffectBool;
 
+    public static bool m_SoundEffectWWWBool;
+
     public static int m_Score;
     public static float m_Time;
 
@@ -75,26 +77,26 @@ public class Scenarios : MonoBehaviour
 
     private void UpdateCurrentScenario()
     {
-        m_Choices = scenarioList.GetScenarios()[currentScenario].GetChoices();
+        m_Choices = scenarioList.GetScenarios()[m_NextScenario].GetChoices();
 
-        m_VideoPath = scenarioList.GetScenarios()[currentScenario].GetVideoPath();
-        m_AmbientSoundPath = scenarioList.GetScenarios()[currentScenario].GetAmbientSoundPath();
-        m_NarrationPath = scenarioList.GetScenarios()[currentScenario].GetNarrationPath();
-        m_SoundEffectPath = scenarioList.GetScenarios()[currentScenario].GetSoundEffectPath();
-        m_ScenarioText = scenarioList.GetScenarios()[currentScenario].GetScenarioText();
-        m_ScenarioChoiceText = scenarioList.GetScenarios()[currentScenario].GetScenarioChoiceText();
+        m_VideoPath = scenarioList.GetScenarios()[m_NextScenario].GetVideoPath();
+        m_AmbientSoundPath = scenarioList.GetScenarios()[m_NextScenario].GetAmbientSoundPath();
+        m_NarrationPath = scenarioList.GetScenarios()[m_NextScenario].GetNarrationPath();
+        m_SoundEffectPath = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectPath();
+        m_ScenarioText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioText();
+        m_ScenarioChoiceText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioChoiceText();
 
-        m_InTransitionLength = scenarioList.GetScenarios()[currentScenario].GetInTransitionLength();
-        m_LightingIntensity = scenarioList.GetScenarios()[currentScenario].GetLightingIntensity();
-        m_AmbientSoundVolume = scenarioList.GetScenarios()[currentScenario].GetAmbientSoundVolume();
-        m_NarrationVolume = scenarioList.GetScenarios()[currentScenario].GetNarrationVolume();
-        m_SoundEffectVolume = scenarioList.GetScenarios()[currentScenario].GetSoundEffectVolume();
+        m_InTransitionLength = scenarioList.GetScenarios()[m_NextScenario].GetInTransitionLength();
+        m_LightingIntensity = scenarioList.GetScenarios()[m_NextScenario].GetLightingIntensity();
+        m_AmbientSoundVolume = scenarioList.GetScenarios()[m_NextScenario].GetAmbientSoundVolume();
+        m_NarrationVolume = scenarioList.GetScenarios()[m_NextScenario].GetNarrationVolume();
+        m_SoundEffectVolume = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectVolume();
 
-        m_SmokeBool = scenarioList.GetScenarios()[currentScenario].GetSmokeBool();
-        m_FireBool = scenarioList.GetScenarios()[currentScenario].GetFireBool();
-        m_FireExtinguisherBool = scenarioList.GetScenarios()[currentScenario].GetFireExtinguisherBool();
-        m_EmergencyLightBool = scenarioList.GetScenarios()[currentScenario].GetEmergencyLightBool();
-        m_SoundEffectBool = scenarioList.GetScenarios()[currentScenario].GetSoundEffectBool();
+        m_SmokeBool = scenarioList.GetScenarios()[m_NextScenario].GetSmokeBool();
+        m_FireBool = scenarioList.GetScenarios()[m_NextScenario].GetFireBool();
+        m_FireExtinguisherBool = scenarioList.GetScenarios()[m_NextScenario].GetFireExtinguisherBool();
+        m_EmergencyLightBool = scenarioList.GetScenarios()[m_NextScenario].GetEmergencyLightBool();
+        m_SoundEffectBool = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectBool();
     }
 
     private void InportScenarioList()
@@ -115,7 +117,7 @@ public class Scenarios : MonoBehaviour
 
     void Awake()
     {
-        m_UpdateScenario = true;
+        m_UpdateScenario = false;
         m_NextScenario = 0;
 
         m_Choices = new List<Choice>();
@@ -139,6 +141,8 @@ public class Scenarios : MonoBehaviour
         m_EmergencyLightBool = false;
         m_SoundEffectBool = false;
 
+        m_SoundEffectWWWBool = false;
+
         m_Score = 0;
         m_Time = 0.0f;
 
@@ -159,15 +163,14 @@ public class Scenarios : MonoBehaviour
     {
         if (currentScenario != m_NextScenario)
         {
-            currentScenario = m_NextScenario;
-
-            if (currentScenario < 0 || currentScenario >= scenarioList.GetScenarios().Count)
+            if (m_NextScenario < 0 || m_NextScenario >= scenarioList.GetScenarios().Count)
             {
-                currentScenario = 0;
                 m_NextScenario = 0;
             }
 
             UpdateCurrentScenario();
+
+            currentScenario = m_NextScenario;
         }
 
         if (m_UpdateScenario)

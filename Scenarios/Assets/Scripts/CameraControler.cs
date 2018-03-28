@@ -71,9 +71,9 @@ public class CameraControler : MonoBehaviour
 
         UpdateObjectActivityOnKeyPress(soundEffect, KeyCode.O);
 
-        if(soundEffect.activeSelf)
+        if (soundEffect.activeSelf)
         {
-            if(!soundEffectSource.isPlaying)
+            if (Scenarios.m_SoundEffectWWWBool && !soundEffectSource.isPlaying)
             {
                 soundEffectSource.Play();
             }

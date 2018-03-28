@@ -59,6 +59,8 @@ public class AudioVisual : MonoBehaviour
 
         yield return www;
 
+        Scenarios.m_SoundEffectWWWBool = true;
+
         soundEffectSource.clip = www.GetAudioClip(false, false);
     }
 

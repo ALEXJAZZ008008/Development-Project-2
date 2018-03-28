@@ -23,6 +23,8 @@ public class InTransition : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+        Scenarios.m_SoundEffectWWWBool = false;
+
         Scenarios.m_UpdateScenario = true;
 
         scenarioText.SetActive(true);
