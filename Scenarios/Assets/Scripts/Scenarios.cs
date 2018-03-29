@@ -15,6 +15,7 @@ public class Scenarios : MonoBehaviour
     public static string m_AmbientSoundPath;
     public static string m_NarrationPath;
     public static string m_SoundEffectPath;
+    public static string m_OutputPath;
     public static string m_ScenarioText;
     public static string m_ScenarioChoiceText;
 
@@ -23,6 +24,7 @@ public class Scenarios : MonoBehaviour
     public static float m_AmbientSoundVolume;
     public static float m_NarrationVolume;
     public static float m_SoundEffectVolume;
+    public static float m_ChoiceWaitLength;
 
     public static bool m_SmokeBool;
     public static bool m_FireBool;
@@ -32,6 +34,8 @@ public class Scenarios : MonoBehaviour
 
     public static bool m_StartBool;
     public static bool m_SoundEffectWWWBool;
+
+    public static string m_UniqueOuputPath;
 
     public static int m_Score;
     public static float m_Time;
@@ -60,6 +64,7 @@ public class Scenarios : MonoBehaviour
         m_AmbientSoundPath = Application.dataPath + "/Audio/AmbientHospital.wav";
         m_NarrationPath = Application.dataPath + "/Audio/Narration.wav";
         m_SoundEffectPath = Application.dataPath + "/Audio/AlarmSound.wav";
+        m_OutputPath = Application.dataPath + "/Output";
         m_ScenarioText = "scenarioText";
         m_ScenarioChoiceText = "scenarioChoiceText";
 
@@ -68,6 +73,7 @@ public class Scenarios : MonoBehaviour
         m_AmbientSoundVolume = 0.75f;
         m_NarrationVolume = 1.0f;
         m_SoundEffectVolume = 0.3f;
+        m_ChoiceWaitLength = 10.0f;
 
         m_SmokeBool = false;
         m_FireBool = false;
@@ -84,6 +90,7 @@ public class Scenarios : MonoBehaviour
         m_AmbientSoundPath = scenarioList.GetScenarios()[m_NextScenario].GetAmbientSoundPath();
         m_NarrationPath = scenarioList.GetScenarios()[m_NextScenario].GetNarrationPath();
         m_SoundEffectPath = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectPath();
+        m_OutputPath = scenarioList.GetScenarios()[m_NextScenario].GetOutputPath();
         m_ScenarioText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioText();
         m_ScenarioChoiceText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioChoiceText();
 
@@ -92,6 +99,7 @@ public class Scenarios : MonoBehaviour
         m_AmbientSoundVolume = scenarioList.GetScenarios()[m_NextScenario].GetAmbientSoundVolume();
         m_NarrationVolume = scenarioList.GetScenarios()[m_NextScenario].GetNarrationVolume();
         m_SoundEffectVolume = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectVolume();
+        m_ChoiceWaitLength = scenarioList.GetScenarios()[m_NextScenario].GetChoiceWaitLength();
 
         m_SmokeBool = scenarioList.GetScenarios()[m_NextScenario].GetSmokeBool();
         m_FireBool = scenarioList.GetScenarios()[m_NextScenario].GetFireBool();
@@ -101,6 +109,11 @@ public class Scenarios : MonoBehaviour
 
         if(m_NextScenario == 0)
         {
+            m_UniqueOuputPath = m_OutputPath + "/output " + DateTime.UtcNow.Ticks.ToString() + ".txt";
+
+            m_Score = 0;
+            m_Time = 0.0f;
+
             m_StartBool = false;
         }
     }
@@ -132,6 +145,7 @@ public class Scenarios : MonoBehaviour
         m_AmbientSoundPath = string.Empty;
         m_NarrationPath = string.Empty;
         m_SoundEffectPath = string.Empty;
+        m_OutputPath = string.Empty;
         m_ScenarioText = string.Empty;
         m_ScenarioChoiceText = string.Empty;
 
@@ -140,6 +154,7 @@ public class Scenarios : MonoBehaviour
         m_AmbientSoundVolume = 0.0f;
         m_NarrationVolume = 0.0f;
         m_SoundEffectVolume = 0.0f;
+        m_ChoiceWaitLength = 0.0f;
 
         m_SmokeBool = false;
         m_FireBool = false;
@@ -149,6 +164,8 @@ public class Scenarios : MonoBehaviour
 
         m_StartBool = false;
         m_SoundEffectWWWBool = false;
+
+        m_UniqueOuputPath = string.Empty;
 
         m_Score = 0;
         m_Time = 0.0f;

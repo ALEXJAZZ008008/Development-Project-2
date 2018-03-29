@@ -40,7 +40,7 @@ namespace API
         private List<Choice> m_Choices;
 
         /// <summary>
-        /// If empty string, black screen. 
+        /// If empty string, go back to start. DO NOT ALLOW EMPTY STRING, ESSPECIALLY ON FIRST SCENARIO. 
         /// If video path but wrong, then display error.
         /// </summary>
         private string m_VideoPath;
@@ -62,6 +62,12 @@ namespace API
         /// Indicates the file path for the sound effect file for the scenario.
         /// </summary>
         private string m_SoundEffectPath;
+
+        /// <summary>
+        /// If empty string, no output. Must be empty after first scenario, I won't check again.
+        /// Indicates the file path for the output file.
+        /// </summary>
+        private string m_OutputPath;
 
         /// <summary>
         /// Empty indicates no scenario text.
@@ -99,6 +105,11 @@ namespace API
         private float m_SoundEffectVolume;
 
         /// <summary>
+        /// Sets in choice length.
+        /// </summary>
+        private float m_ChoiceWaitLength;
+
+        /// <summary>
         /// Indicates that the scenario has a smoke effect.
         /// </summary>
         private bool m_SmokeBool;
@@ -131,6 +142,7 @@ namespace API
             m_AmbientSoundPath = string.Empty;
             m_NarrationPath = string.Empty;
             m_SoundEffectPath = string.Empty;
+            m_OutputPath = string.Empty;
             m_ScenarioText = string.Empty;
             m_ScenarioChoiceText = string.Empty;
 
@@ -139,6 +151,7 @@ namespace API
             m_AmbientSoundVolume = 0.0f;
             m_NarrationVolume = 0.0f;
             m_SoundEffectVolume = 0.0f;
+            m_ChoiceWaitLength = 0.0f;
 
             m_SmokeBool = false;
             m_FireBool = false;
@@ -155,6 +168,7 @@ namespace API
             m_AmbientSoundPath = scenario.GetAmbientSoundPath();
             m_NarrationPath = scenario.GetNarrationPath();
             m_SoundEffectPath = scenario.GetSoundEffectPath();
+            m_OutputPath = scenario.GetOutputPath();
             m_ScenarioText = scenario.GetScenarioText();
             m_ScenarioChoiceText = scenario.GetScenarioChoiceText();
 
@@ -163,6 +177,7 @@ namespace API
             m_AmbientSoundVolume = scenario.GetAmbientSoundVolume();
             m_NarrationVolume = scenario.GetNarrationVolume();
             m_SoundEffectVolume = scenario.GetSoundEffectVolume();
+            m_ChoiceWaitLength = scenario.GetChoiceWaitLength();
 
             m_SmokeBool = scenario.GetSmokeBool();
             m_FireBool = scenario.GetFireBool();
@@ -171,7 +186,7 @@ namespace API
             m_SoundEffectBool = scenario.GetSoundEffectBool();
         }
 
-        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string scenarioText, string scenarioChoiceText, float inTransitionLength, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, bool smokeBool, bool fireBool, bool fireExtinguisherBool, bool emergencyLightBool, bool soundEffectBool)
+        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string outputPath, string scenarioText, string scenarioChoiceText, float inTransitionLength, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, float choiceWaitLength, bool smokeBool, bool fireBool, bool fireExtinguisherBool, bool emergencyLightBool, bool soundEffectBool)
         {
             m_Choices = choices;
 
@@ -179,6 +194,7 @@ namespace API
             m_AmbientSoundPath = ambientSoundPath;
             m_NarrationPath = narrationPath;
             m_SoundEffectPath = soundEffectPath;
+            m_OutputPath = outputPath;
             m_ScenarioText = scenarioText;
             m_ScenarioChoiceText = scenarioChoiceText;
 
@@ -187,6 +203,7 @@ namespace API
             m_AmbientSoundVolume = ambientSoundVolume;
             m_NarrationVolume = narrationVolume;
             m_SoundEffectVolume = soundEffectVolume;
+            m_ChoiceWaitLength = choiceWaitLength;
 
             m_SmokeBool = smokeBool;
             m_FireBool = fireBool;
@@ -218,6 +235,11 @@ namespace API
         public string GetSoundEffectPath()
         {
             return m_SoundEffectPath;
+        }
+
+        public string GetOutputPath()
+        {
+            return m_OutputPath;
         }
 
         public string GetScenarioText()
@@ -253,6 +275,11 @@ namespace API
         public float GetSoundEffectVolume()
         {
             return m_SoundEffectVolume;
+        }
+
+        public float GetChoiceWaitLength()
+        {
+            return m_ChoiceWaitLength;
         }
 
         public bool GetSmokeBool()
@@ -305,6 +332,11 @@ namespace API
             m_SoundEffectPath = soundEffectPath;
         }
 
+        public void SetOutputPath(string outputPath)
+        {
+            m_OutputPath = outputPath;
+        }
+
         public void SetScenarioText(string scenarioText)
         {
             m_ScenarioText = scenarioText;
@@ -338,6 +370,11 @@ namespace API
         public void SetSoundEffectVolume(float soundEffectVolume)
         {
             m_SoundEffectVolume = soundEffectVolume;
+        }
+
+        public void SetChoiceWaitLength(float choiceWaitLength)
+        {
+            m_ChoiceWaitLength = choiceWaitLength;
         }
 
         public void SetSmokeBool(bool smokeBool)

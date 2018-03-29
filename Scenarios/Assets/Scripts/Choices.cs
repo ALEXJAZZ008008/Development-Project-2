@@ -18,7 +18,7 @@ public class Choices : MonoBehaviour
 
     void OnEnable()
     {
-        countdownTextAsset.text = "10";
+        countdownTextAsset.text = ((int)Scenarios.m_ChoiceWaitLength).ToString();
 
         int angle = 360 / Scenarios.m_Choices.Count;
 

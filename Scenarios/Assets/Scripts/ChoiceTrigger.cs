@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ChoiceTrigger : MonoBehaviour
@@ -16,7 +17,7 @@ public class ChoiceTrigger : MonoBehaviour
 
     void Awake()
     {
-        timer = 10.0f;
+        timer = Scenarios.m_ChoiceWaitLength;
     }
 
     void OnTriggerStay(Collider other)
@@ -37,6 +38,11 @@ public class ChoiceTrigger : MonoBehaviour
                 }
 
                 Scenarios.m_Score += score;
+
+                using (StreamWriter streamWriter = new StreamWriter(Scenarios.m_UniqueOuputPath, true))
+                {
+                    streamWriter.WriteLine(feedbackText + "\r\nCurrent Score: " + Scenarios.m_Score.ToString() + "\r\nCurrent Time: " + Scenarios.m_Time.ToString());
+                }
             }
         }
     }
@@ -45,7 +51,7 @@ public class ChoiceTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Crosshair"))
         {
-            timer = 10.0f;
+            timer = Scenarios.m_ChoiceWaitLength;
 
             countdownTextAsset.text = ((int)timer).ToString();
         }
