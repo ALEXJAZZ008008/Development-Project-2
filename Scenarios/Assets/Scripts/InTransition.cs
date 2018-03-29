@@ -37,12 +37,15 @@ public class InTransition : MonoBehaviour
     {
         if (pause <= Scenarios.m_InTransitionLength)
         {
-            if (!Scenarios.m_UpdateScenario && !audioVisual.activeSelf)
+            if(Scenarios.m_StartBool)
             {
-                audioVisual.SetActive(true);
-            }
+                if (!Scenarios.m_UpdateScenario && !audioVisual.activeSelf)
+                {
+                    audioVisual.SetActive(true);
+                }
 
-            pause += 1.0f * Time.deltaTime;
+                pause += 1.0f * Time.deltaTime;
+            }
         }
         else
         {

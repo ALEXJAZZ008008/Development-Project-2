@@ -13,11 +13,7 @@ public class CameraControler : MonoBehaviour
     void Awake()
     {
         soundEffectSource = soundEffect.GetComponent<AudioSource>();
-    }
 
-    // Use this for initialization
-    void Start()
-    {
         rotation = new Vector3();
     }
 
@@ -84,6 +80,16 @@ public class CameraControler : MonoBehaviour
             {
                 soundEffectSource.Stop();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Scenarios.m_StartBool = true;
         }
 
         if (!outTransition.activeSelf)

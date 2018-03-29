@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class Choices : MonoBehaviour
 {
     public GameObject choicePrefab;
+    public GameObject outTransition;
+
+    public Text countdownTextAsset;
 
     private List<GameObject> choiceList;
 
@@ -15,6 +18,8 @@ public class Choices : MonoBehaviour
 
     void OnEnable()
     {
+        countdownTextAsset.text = "10";
+
         int angle = 360 / Scenarios.m_Choices.Count;
 
         int currentAngle = 0;
@@ -25,16 +30,16 @@ public class Choices : MonoBehaviour
 
             choiceList[i].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Scenarios.m_Choices[i].GetChoiceText();
 
+            choiceList[i].GetComponent<ChoiceTrigger>().feedbackText = Scenarios.m_Choices[i].GetFeedbackText();
+            choiceList[i].GetComponent<ChoiceTrigger>().nextScenarioIndex = Scenarios.m_Choices[i].GetNextScenarioIndex();
+            choiceList[i].GetComponent<ChoiceTrigger>().score = Scenarios.m_Choices[i].GetScore();
+            choiceList[i].GetComponent<ChoiceTrigger>().outTransition = outTransition;
+            choiceList[i].GetComponent<ChoiceTrigger>().countdownTextAsset = countdownTextAsset;
+
             choiceList[i].transform.RotateAround(Vector3.zero, Vector3.up, currentAngle);
 
             currentAngle += angle;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnDisable()

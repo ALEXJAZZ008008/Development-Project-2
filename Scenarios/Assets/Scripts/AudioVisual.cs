@@ -6,9 +6,11 @@ public class AudioVisual : MonoBehaviour
 {
     public GameObject video;
     public GameObject fireExtinguisherCanvas;
+    public GameObject outTransition;
     public GameObject crosshair;
     public GameObject choiceCanvas;
     public GameObject scenarioChoiceText;
+    public GameObject countdownText;
     public GameObject ambientSound;
     public GameObject narration;
     public GameObject soundEffect;
@@ -123,9 +125,26 @@ public class AudioVisual : MonoBehaviour
             fireExtinguisherCanvas.SetActive(false);
         }
 
-        crosshair.SetActive(true);
-        choiceCanvas.SetActive(true);
-        scenarioChoiceText.SetActive(true);
+        if (Scenarios.m_Choices.Count > 1)
+        {
+            crosshair.SetActive(true);
+            choiceCanvas.SetActive(true);
+            scenarioChoiceText.SetActive(true);
+            countdownText.SetActive(true);
+        }
+        else
+        {
+            if (Scenarios.m_Choices.Count == 1)
+            {
+                Scenarios.m_NextScenario = Scenarios.m_Choices[0].GetNextScenarioIndex();
+            }
+            else
+            {
+                Scenarios.m_NextScenario = 0;
+            }
+
+            outTransition.SetActive(true);
+        }
 
         videoPlayer.Stop();
     }

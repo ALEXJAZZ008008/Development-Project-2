@@ -8,11 +8,7 @@ public class EmergencyLight : MonoBehaviour
     void Awake()
     {
         material = GetComponent<Renderer>().material;
-    }
 
-    // Use this for initialization
-    void Start()
-    {
         alphaAscending = true;
     }
 

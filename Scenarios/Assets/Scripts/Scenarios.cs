@@ -30,6 +30,7 @@ public class Scenarios : MonoBehaviour
     public static bool m_EmergencyLightBool;
     public static bool m_SoundEffectBool;
 
+    public static bool m_StartBool;
     public static bool m_SoundEffectWWWBool;
 
     public static int m_Score;
@@ -97,6 +98,11 @@ public class Scenarios : MonoBehaviour
         m_FireExtinguisherBool = scenarioList.GetScenarios()[m_NextScenario].GetFireExtinguisherBool();
         m_EmergencyLightBool = scenarioList.GetScenarios()[m_NextScenario].GetEmergencyLightBool();
         m_SoundEffectBool = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectBool();
+
+        if(m_NextScenario == 0)
+        {
+            m_StartBool = false;
+        }
     }
 
     private void InportScenarioList()
@@ -141,6 +147,7 @@ public class Scenarios : MonoBehaviour
         m_EmergencyLightBool = false;
         m_SoundEffectBool = false;
 
+        m_StartBool = false;
         m_SoundEffectWWWBool = false;
 
         m_Score = 0;
