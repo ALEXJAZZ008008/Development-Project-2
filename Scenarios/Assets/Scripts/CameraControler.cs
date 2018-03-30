@@ -94,6 +94,11 @@ public class CameraControler : MonoBehaviour
 
         if (!outTransition.activeSelf)
         {
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                Scenarios.m_StartBool = false;
+            }
+
             UpdateObjectActivityOnKeyPress(outTransition, KeyCode.P);
         }
 
