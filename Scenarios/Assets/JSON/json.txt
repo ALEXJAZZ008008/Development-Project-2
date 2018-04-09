@@ -17,11 +17,11 @@
             }
           ]
         },
-        "m_VideoPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Videos/Stationary1.mp4",
-        "m_AmbientSoundPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
-        "m_NarrationPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
-        "m_SoundEffectPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
-        "m_OutputPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Output",
+        "m_VideoPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Videos/Stationary1.mp4",
+        "m_AmbientSoundPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AmbientHospital.wav",
+        "m_NarrationPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/Narration.wav",
+        "m_SoundEffectPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_OutputPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Output",
         "m_ScenarioText": "scenarioText0",
         "m_ScenarioChoiceText": "scenarioChoiceText0",
         "m_InTransitionLength": 3.0,
@@ -58,10 +58,10 @@
             }
           ]
         },
-        "m_VideoPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Videos/Stationary2.mp4",
-        "m_AmbientSoundPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AmbientRadio.wav",
+        "m_VideoPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Videos/Stationary2.mp4",
+        "m_AmbientSoundPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AmbientRadio.wav",
         "m_NarrationPath": "",
-        "m_SoundEffectPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_SoundEffectPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AlarmSound.wav",
         "m_OutputPath": "",
         "m_ScenarioText": "scenarioText1",
         "m_ScenarioChoiceText": "scenarioChoiceText1",
@@ -106,10 +106,10 @@
             }
           ]
         },
-        "m_VideoPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Videos/Stationary3.mp4",
-        "m_AmbientSoundPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
-        "m_NarrationPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
-        "m_SoundEffectPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_VideoPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Videos/Stationary3.mp4",
+        "m_AmbientSoundPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AmbientHospital.wav",
+        "m_NarrationPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/Narration.wav",
+        "m_SoundEffectPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AlarmSound.wav",
         "m_OutputPath": "",
         "m_ScenarioText": "scenarioText2",
         "m_ScenarioChoiceText": "scenarioChoiceText2",
@@ -161,10 +161,10 @@
             }
           ]
         },
-        "m_VideoPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Videos/Stationary4.mp4",
-        "m_AmbientSoundPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AmbientRadio.wav",
+        "m_VideoPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Videos/Stationary4.mp4",
+        "m_AmbientSoundPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AmbientRadio.wav",
         "m_NarrationPath": "",
-        "m_SoundEffectPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_SoundEffectPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AlarmSound.wav",
         "m_OutputPath": "",
         "m_ScenarioText": "scenarioText3",
         "m_ScenarioChoiceText": "scenarioChoiceText3",
@@ -223,10 +223,10 @@
             }
           ]
         },
-        "m_VideoPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Videos/Trolly1.mp4",
-        "m_AmbientSoundPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AmbientHospital.wav",
-        "m_NarrationPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/Narration.wav",
-        "m_SoundEffectPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_VideoPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Videos/Trolly1.mp4",
+        "m_AmbientSoundPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AmbientHospital.wav",
+        "m_NarrationPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/Narration.wav",
+        "m_SoundEffectPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AlarmSound.wav",
         "m_OutputPath": "",
         "m_ScenarioText": "scenarioText4",
         "m_ScenarioChoiceText": "scenarioChoiceText4",
@@ -249,10 +249,10 @@
           "$id": "29",
           "$values": []
         },
-        "m_VideoPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Videos/Walking1.mp4",
-        "m_AmbientSoundPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AmbientRadio.wav",
+        "m_VideoPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Videos/Walking1.mp4",
+        "m_AmbientSoundPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AmbientRadio.wav",
         "m_NarrationPath": "",
-        "m_SoundEffectPath": "C:/Temp/!!!Work!!!/Semester 2/Development-Project-2/Scenarios/Assets/Audio/AlarmSound.wav",
+        "m_SoundEffectPath": "C:/Users/483446/Downloads/Development-Project-2-master/Scenarios/Assets/Audio/AlarmSound.wav",
         "m_OutputPath": "",
         "m_ScenarioText": "scenarioText5",
         "m_ScenarioChoiceText": "scenarioChoiceText5",

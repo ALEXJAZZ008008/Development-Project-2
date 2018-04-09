@@ -1,0 +1,6 @@
+Went to 2
+Current Score: 1
+Current Time: 46.48811
+Went to 3
+Current Score: 2
+Current Time: 69.20479
