@@ -20,6 +20,7 @@ public class Scenarios : MonoBehaviour
     public static string m_ScenarioChoiceText;
 
     public static float m_InTransitionLength;
+    public static float m_VideoBrightness;
     public static float m_LightingIntensity;
     public static float m_AmbientSoundVolume;
     public static float m_NarrationVolume;
@@ -44,6 +45,7 @@ public class Scenarios : MonoBehaviour
     public GameObject fireCanvas;
     public GameObject fireExtinguisherCanvas;
     public GameObject emergencyLight;
+    public GameObject brightness;
     public GameObject soundEffect;
 
     public TextAsset defaultScenarioListJSON;
@@ -58,6 +60,8 @@ public class Scenarios : MonoBehaviour
 
     private int currentScenario;
 
+    private Material brightnessMaterial;
+
     private void DefaultScenario()
     {
         m_VideoPath = Application.dataPath + "/Videos/Stationary1.mp4";
@@ -69,6 +73,7 @@ public class Scenarios : MonoBehaviour
         m_ScenarioChoiceText = "scenarioChoiceText";
 
         m_InTransitionLength = 3.0f;
+        m_VideoBrightness = 1.0f;
         m_LightingIntensity = 0.25f;
         m_AmbientSoundVolume = 0.75f;
         m_NarrationVolume = 1.0f;
@@ -95,6 +100,7 @@ public class Scenarios : MonoBehaviour
         m_ScenarioChoiceText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioChoiceText();
 
         m_InTransitionLength = scenarioList.GetScenarios()[m_NextScenario].GetInTransitionLength();
+        m_VideoBrightness = scenarioList.GetScenarios()[m_NextScenario].GetVideoBrightness();
         m_LightingIntensity = scenarioList.GetScenarios()[m_NextScenario].GetLightingIntensity();
         m_AmbientSoundVolume = scenarioList.GetScenarios()[m_NextScenario].GetAmbientSoundVolume();
         m_NarrationVolume = scenarioList.GetScenarios()[m_NextScenario].GetNarrationVolume();
@@ -150,6 +156,7 @@ public class Scenarios : MonoBehaviour
         m_ScenarioChoiceText = string.Empty;
 
         m_InTransitionLength = 0.0f;
+        m_VideoBrightness = 0.0f;
         m_LightingIntensity = 0.0f;
         m_AmbientSoundVolume = 0.0f;
         m_NarrationVolume = 0.0f;
@@ -171,6 +178,8 @@ public class Scenarios : MonoBehaviour
         m_Time = 0.0f;
 
         currentScenario = 0;
+
+        brightnessMaterial = brightness.GetComponent<Renderer>().material;
 
         if (inportScenarioBool)
         {
@@ -204,6 +213,12 @@ public class Scenarios : MonoBehaviour
             fireExtinguisherCanvas.SetActive(m_FireExtinguisherBool);
             emergencyLight.SetActive(m_EmergencyLightBool);
             soundEffect.SetActive(m_SoundEffectBool);
+
+            Color colour = brightnessMaterial.color;
+
+            colour.a = 1.0f - m_VideoBrightness;
+
+            brightnessMaterial.color = colour;
 
             m_UpdateScenario = false;
         }

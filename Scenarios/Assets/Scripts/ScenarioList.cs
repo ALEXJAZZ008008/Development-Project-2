@@ -87,6 +87,11 @@ namespace API
         /// <summary>
         /// Sets emergency lighting intensity.
         /// </summary>
+        private float m_VideoBrightness;
+
+        /// <summary>
+        /// Sets emergency lighting intensity.
+        /// </summary>
         private float m_LightingIntensity;
 
         /// <summary>
@@ -147,6 +152,7 @@ namespace API
             m_ScenarioChoiceText = string.Empty;
 
             m_InTransitionLength = 0.0f;
+            m_VideoBrightness = 0.0f;
             m_LightingIntensity = 0.0f;
             m_AmbientSoundVolume = 0.0f;
             m_NarrationVolume = 0.0f;
@@ -173,6 +179,7 @@ namespace API
             m_ScenarioChoiceText = scenario.GetScenarioChoiceText();
 
             m_InTransitionLength = scenario.GetInTransitionLength();
+            m_VideoBrightness = scenario.GetVideoBrightness();
             m_LightingIntensity = scenario.GetLightingIntensity();
             m_AmbientSoundVolume = scenario.GetAmbientSoundVolume();
             m_NarrationVolume = scenario.GetNarrationVolume();
@@ -186,7 +193,7 @@ namespace API
             m_SoundEffectBool = scenario.GetSoundEffectBool();
         }
 
-        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string outputPath, string scenarioText, string scenarioChoiceText, float inTransitionLength, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, float choiceWaitLength, bool smokeBool, bool fireBool, bool fireExtinguisherBool, bool emergencyLightBool, bool soundEffectBool)
+        public Scenario(List<Choice> choices, string videoPath, string ambientSoundPath, string narrationPath, string soundEffectPath, string outputPath, string scenarioText, string scenarioChoiceText, float inTransitionLength, float videoBrightness, float lightingIntensity, float ambientSoundVolume, float narrationVolume, float soundEffectVolume, float choiceWaitLength, bool smokeBool, bool fireBool, bool fireExtinguisherBool, bool emergencyLightBool, bool soundEffectBool)
         {
             m_Choices = choices;
 
@@ -199,6 +206,7 @@ namespace API
             m_ScenarioChoiceText = scenarioChoiceText;
 
             m_InTransitionLength = inTransitionLength;
+            m_VideoBrightness = videoBrightness;
             m_LightingIntensity = lightingIntensity;
             m_AmbientSoundVolume = ambientSoundVolume;
             m_NarrationVolume = narrationVolume;
@@ -255,6 +263,11 @@ namespace API
         public float GetInTransitionLength()
         {
             return m_InTransitionLength;
+        }
+
+        public float GetVideoBrightness()
+        {
+            return m_VideoBrightness;
         }
 
         public float GetLightingIntensity()
@@ -350,6 +363,11 @@ namespace API
         public void SetInTransitionLength(float inTransitionLength)
         {
             m_InTransitionLength = inTransitionLength;
+        }
+
+        public void SetVideoBrightness(float videoBrightness)
+        {
+            m_VideoBrightness = videoBrightness;
         }
 
         public void SetLightingIntensity(float lightingIntensity)
