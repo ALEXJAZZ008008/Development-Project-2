@@ -28,6 +28,8 @@ public class Choices : MonoBehaviour
         {
             choiceList.Add(Instantiate(choicePrefab));
 
+            choiceList[i].transform.parent = transform;
+
             choiceList[i].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Scenarios.m_Choices[i].GetChoiceText();
 
             choiceList[i].GetComponent<ChoiceTrigger>().feedbackText = Scenarios.m_Choices[i].GetFeedbackText();

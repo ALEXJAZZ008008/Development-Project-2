@@ -32,7 +32,7 @@ public class ChoiceTrigger : MonoBehaviour
             {
                 Scenarios.m_NextScenario = nextScenarioIndex;
 
-                if(!outTransition.activeSelf)
+                if (!outTransition.activeSelf)
                 {
                     outTransition.SetActive(true);
                 }

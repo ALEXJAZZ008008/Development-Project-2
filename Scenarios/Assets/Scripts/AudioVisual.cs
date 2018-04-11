@@ -80,8 +80,7 @@ public class AudioVisual : MonoBehaviour
         }
         else
         {
-            Scenarios.m_NextScenario = 0;
-            Scenarios.m_UpdateScenario = true;
+            Application.Quit();
         }
 
         if (Scenarios.m_AmbientSoundPath != string.Empty)
@@ -140,7 +139,7 @@ public class AudioVisual : MonoBehaviour
             }
             else
             {
-                Scenarios.m_NextScenario = 0;
+                Application.Quit();
             }
 
             outTransition.SetActive(true);

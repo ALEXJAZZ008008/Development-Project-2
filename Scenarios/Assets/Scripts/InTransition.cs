@@ -5,7 +5,7 @@ public class InTransition : MonoBehaviour
     public GameObject outTransition;
     public GameObject audioVisual;
     public GameObject scenarioText;
-	public GameObject objects;
+    public GameObject objects;
     public GameObject metricsText;
     public float speed;
 
@@ -38,7 +38,7 @@ public class InTransition : MonoBehaviour
     {
         if (pause <= Scenarios.m_InTransitionLength)
         {
-            if(Scenarios.m_StartBool)
+            if (Scenarios.m_StartBool)
             {
                 if (!Scenarios.m_UpdateScenario && !audioVisual.activeSelf)
                 {
@@ -54,7 +54,7 @@ public class InTransition : MonoBehaviour
             {
                 scenarioText.SetActive(false);
 
-				objects.SetActive(true);
+                objects.SetActive(true);
             }
 
             Color colour = material.color;

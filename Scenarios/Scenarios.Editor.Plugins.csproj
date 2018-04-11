@@ -319,7 +319,6 @@
     <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.XML" />
     <None Include="Assets\JsonDotNet\link.xml" />
     <None Include="Assets\OSPNative\THIRD_PARTY_NOTICES.txt" />
-    <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\OVR\Resources\Cubemap Blit.shader" />
     <None Include="Assets\OVR\Resources\OVRMRCameraFrame.shader" />
@@ -335,15 +334,6 @@
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
     <None Include="Assets\OVR\THIRD_PARTY_NOTICES.txt" />
-    <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarMaterialStateShader.cginc" />
-    <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShader.shader" />
-    <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
-    <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderPBSV2.shader" />
-    <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
-    <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
-    <None Include="Assets\Output\output 636588807320339642.txt" />
-    <None Include="Assets\Output\output 636588879729144457.txt" />
-    <None Include="Assets\Output\output 636588914950033254.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

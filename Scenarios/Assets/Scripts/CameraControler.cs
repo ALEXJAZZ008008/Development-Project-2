@@ -30,18 +30,6 @@ public class CameraControler : MonoBehaviour
         rotation.x += speed.x * -Input.GetAxis("Vertical");
         rotation.y -= speed.y * -Input.GetAxis("Horizontal");
 
-        if (rotation.x < -60.0f)
-        {
-            rotation.x = -60.0f;
-        }
-        else
-        {
-            if (rotation.x > 90.0f)
-            {
-                rotation.x = 90.0f;
-            }
-        }
-
         if (rotation.y < 0.0f)
         {
             rotation.y = 360.0f + rotation.y;
@@ -94,7 +82,7 @@ public class CameraControler : MonoBehaviour
 
         if (!outTransition.activeSelf)
         {
-            if(Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 Scenarios.m_StartBool = false;
             }

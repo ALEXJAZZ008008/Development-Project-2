@@ -35,6 +35,14 @@ public class OutTransition : MonoBehaviour
     {
         Color colour = material.color;
 
+        for (int i = 0; i < objects.Length; i++)
+        {
+            if (objects[i].activeSelf)
+            {
+                objects[i].SetActive(false);
+            }
+        }
+
         if (colour.a < 1.0f)
         {
             colour.a += speed * Time.deltaTime;
@@ -43,14 +51,6 @@ public class OutTransition : MonoBehaviour
 
             if (colour.a >= 1.0f)
             {
-                for (int i = 0; i < objects.Length; i++)
-                {
-                    if (objects[i].activeSelf)
-                    {
-                        objects[i].SetActive(false);
-                    }
-                }
-
                 gameObject.SetActive(false);
             }
         }

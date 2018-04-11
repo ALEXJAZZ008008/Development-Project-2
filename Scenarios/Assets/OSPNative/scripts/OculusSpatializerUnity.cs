@@ -45,7 +45,7 @@ public class OculusSpatializerUnity : MonoBehaviour
     float particleOffset = 0.1f;
 
     GameObject room;
-    GameObject[] walls = new GameObject[6];
+    //GameObject[] walls = new GameObject[6];
     Renderer[] wallRenderer = new Renderer[6];
 
     float[] dims = new float[3] { 1.0f, 1.0f, 1.0f };

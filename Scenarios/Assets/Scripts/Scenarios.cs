@@ -19,6 +19,8 @@ public class Scenarios : MonoBehaviour
     public static string m_ScenarioText;
     public static string m_ScenarioChoiceText;
 
+    public static List<float> m_FireArc;
+
     public static float m_InTransitionLength;
     public static float m_VideoBrightness;
     public static float m_LightingIntensity;
@@ -72,6 +74,8 @@ public class Scenarios : MonoBehaviour
         m_ScenarioText = "scenarioText";
         m_ScenarioChoiceText = "scenarioChoiceText";
 
+        m_FireArc = new List<float> { 35.0f, 90.0f, 35.0f, 45.0f };
+
         m_InTransitionLength = 3.0f;
         m_VideoBrightness = 1.0f;
         m_LightingIntensity = 0.25f;
@@ -99,6 +103,8 @@ public class Scenarios : MonoBehaviour
         m_ScenarioText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioText();
         m_ScenarioChoiceText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioChoiceText();
 
+        m_FireArc = scenarioList.GetScenarios()[m_NextScenario].GetFireArc();
+
         m_InTransitionLength = scenarioList.GetScenarios()[m_NextScenario].GetInTransitionLength();
         m_VideoBrightness = scenarioList.GetScenarios()[m_NextScenario].GetVideoBrightness();
         m_LightingIntensity = scenarioList.GetScenarios()[m_NextScenario].GetLightingIntensity();
@@ -113,7 +119,7 @@ public class Scenarios : MonoBehaviour
         m_EmergencyLightBool = scenarioList.GetScenarios()[m_NextScenario].GetEmergencyLightBool();
         m_SoundEffectBool = scenarioList.GetScenarios()[m_NextScenario].GetSoundEffectBool();
 
-        if(m_NextScenario == 0)
+        if (m_NextScenario == 0)
         {
             m_UniqueOuputPath = m_OutputPath + "/output " + DateTime.UtcNow.Ticks.ToString() + ".txt";
 
@@ -154,6 +160,8 @@ public class Scenarios : MonoBehaviour
         m_OutputPath = string.Empty;
         m_ScenarioText = string.Empty;
         m_ScenarioChoiceText = string.Empty;
+
+        m_FireArc = new List<float>();
 
         m_InTransitionLength = 0.0f;
         m_VideoBrightness = 0.0f;
@@ -198,7 +206,7 @@ public class Scenarios : MonoBehaviour
         {
             if (m_NextScenario < 0 || m_NextScenario >= scenarioList.GetScenarios().Count)
             {
-                m_NextScenario = 0;
+                Application.Quit();
             }
 
             UpdateCurrentScenario();
