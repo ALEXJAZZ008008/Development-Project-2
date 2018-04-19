@@ -11,6 +11,7 @@ public class SmokeStarter : MonoBehaviour
 
 	void OnDisable()
 	{
-		smoke.SetActive (false);
+        if(smoke != null)
+		    smoke.SetActive (false);
 	}
 }
