@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -24,6 +25,8 @@ public class AudioVisual : MonoBehaviour
     private AudioSource fireSoundEffectSource;
     private AudioSource fireExtinguisherSoundEffectSource;
 
+    private bool ambientReadyToPlay;
+
     void Awake()
     {
         videoPlayer = video.GetComponent<VideoPlayer>();
@@ -33,13 +36,18 @@ public class AudioVisual : MonoBehaviour
         soundEffectSource = soundEffect.GetComponent<AudioSource>();
         fireSoundEffectSource = fireSoundEffect.GetComponent<AudioSource>();
         fireExtinguisherSoundEffectSource = fireExtinguisherSoundEffect.GetComponent<AudioSource>();
+
+        ambientReadyToPlay = false;
     }
 
     IEnumerator LoadAmbientSoundCoroutine()
     {
-        WWW www = new WWW(Scenarios.m_AmbientSoundPath);
+        WWW www = new WWW("file:///" + Scenarios.m_AmbientSoundPath);
 
-        yield return www;
+        while (!www.isDone)
+        {
+            yield return www;
+        }
 
         ambientSoundSource.clip = www.GetAudioClip(false, false);
 
@@ -48,9 +56,12 @@ public class AudioVisual : MonoBehaviour
 
     IEnumerator LoadNarrationCoroutine()
     {
-        WWW www = new WWW(Scenarios.m_NarrationPath);
+        WWW www = new WWW("file:///" + Scenarios.m_NarrationPath);
 
-        yield return www;
+        while (!www.isDone)
+        {
+            yield return www;
+        }
 
         narrationSource.clip = www.GetAudioClip(false, false);
 
@@ -59,9 +70,12 @@ public class AudioVisual : MonoBehaviour
 
     IEnumerator LoadSoundEffectCoroutine()
     {
-        WWW www = new WWW(Scenarios.m_SoundEffectPath);
+        WWW www = new WWW("file:///" + Scenarios.m_SoundEffectPath);
 
-        yield return www;
+        while (!www.isDone)
+        {
+            yield return www;
+        }
 
         Scenarios.m_SoundEffectWWWBool = true;
 
@@ -72,7 +86,7 @@ public class AudioVisual : MonoBehaviour
     {
         videoPlayer.targetTexture.Release();
 
-        if (Scenarios.m_VideoPath != string.Empty)
+        if (File.Exists(Scenarios.m_VideoPath))
         {
             videoPlayer.url = Scenarios.m_VideoPath;
 
@@ -83,31 +97,19 @@ public class AudioVisual : MonoBehaviour
             Application.Quit();
         }
 
-        if (Scenarios.m_AmbientSoundPath != string.Empty)
+        if (File.Exists(Scenarios.m_AmbientSoundPath))
         {
             StartCoroutine(LoadAmbientSoundCoroutine());
         }
-        else
-        {
-            ambientSoundSource.Stop();
-        }
 
-        if (Scenarios.m_NarrationPath != string.Empty)
+        if (File.Exists(Scenarios.m_NarrationPath))
         {
             StartCoroutine(LoadNarrationCoroutine());
         }
-        else
-        {
-            narrationSource.Stop();
-        }
 
-        if (Scenarios.m_SoundEffectPath != string.Empty)
+        if (File.Exists(Scenarios.m_SoundEffectPath))
         {
             StartCoroutine(LoadSoundEffectCoroutine());
-        }
-        else
-        {
-            soundEffectSource.Stop();
         }
 
         ambientSoundSource.volume = Scenarios.m_AmbientSoundVolume;

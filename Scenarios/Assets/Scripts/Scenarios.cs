@@ -20,6 +20,7 @@ public class Scenarios : MonoBehaviour
     public static string m_ScenarioChoiceText;
 
     public static List<float> m_FireArc;
+    public static List<float> m_SmokeArc;
 
     public static float m_InTransitionLength;
     public static float m_VideoBrightness;
@@ -38,7 +39,7 @@ public class Scenarios : MonoBehaviour
     public static bool m_StartBool;
     public static bool m_SoundEffectWWWBool;
 
-    public static string m_UniqueOuputPath;
+    public static string m_UniqueOutputPath;
 
     public static int m_Score;
     public static float m_Time;
@@ -55,7 +56,7 @@ public class Scenarios : MonoBehaviour
     public Text scenarioText;
     public Text scenarioChoiceText;
 
-    public bool inportScenarioBool;
+    public bool importScenarioBool;
     public bool defaultScenarioListBool;
 
     private ScenarioList scenarioList;
@@ -75,6 +76,7 @@ public class Scenarios : MonoBehaviour
         m_ScenarioChoiceText = "scenarioChoiceText";
 
         m_FireArc = new List<float> { 35.0f, 90.0f, 35.0f, 45.0f };
+        m_SmokeArc = new List<float> { 35.0f, 90.0f, 35.0f, 45.0f };
 
         m_InTransitionLength = 3.0f;
         m_VideoBrightness = 1.0f;
@@ -104,6 +106,7 @@ public class Scenarios : MonoBehaviour
         m_ScenarioChoiceText = scenarioList.GetScenarios()[m_NextScenario].GetScenarioChoiceText();
 
         m_FireArc = scenarioList.GetScenarios()[m_NextScenario].GetFireArc();
+        m_SmokeArc = scenarioList.GetScenarios()[m_NextScenario].GetSmokeArc();
 
         m_InTransitionLength = scenarioList.GetScenarios()[m_NextScenario].GetInTransitionLength();
         m_VideoBrightness = scenarioList.GetScenarios()[m_NextScenario].GetVideoBrightness();
@@ -121,7 +124,7 @@ public class Scenarios : MonoBehaviour
 
         if (m_NextScenario == 0)
         {
-            m_UniqueOuputPath = m_OutputPath + "/output " + DateTime.UtcNow.Ticks.ToString() + ".txt";
+            m_UniqueOutputPath = m_OutputPath + "/output " + DateTime.UtcNow.Ticks.ToString() + ".txt";
 
             m_Score = 0;
             m_Time = 0.0f;
@@ -130,7 +133,7 @@ public class Scenarios : MonoBehaviour
         }
     }
 
-    private void InportScenarioList()
+    private void ImportScenarioList()
     {
         string[] commandLineArguments = Environment.GetCommandLineArgs();
 
@@ -162,6 +165,7 @@ public class Scenarios : MonoBehaviour
         m_ScenarioChoiceText = string.Empty;
 
         m_FireArc = new List<float>();
+        m_SmokeArc = new List<float>();
 
         m_InTransitionLength = 0.0f;
         m_VideoBrightness = 0.0f;
@@ -180,7 +184,7 @@ public class Scenarios : MonoBehaviour
         m_StartBool = false;
         m_SoundEffectWWWBool = false;
 
-        m_UniqueOuputPath = string.Empty;
+        m_UniqueOutputPath = string.Empty;
 
         m_Score = 0;
         m_Time = 0.0f;
@@ -189,9 +193,9 @@ public class Scenarios : MonoBehaviour
 
         brightnessMaterial = brightness.GetComponent<Renderer>().material;
 
-        if (inportScenarioBool)
+        if (importScenarioBool)
         {
-            InportScenarioList();
+            ImportScenarioList();
         }
         else
         {

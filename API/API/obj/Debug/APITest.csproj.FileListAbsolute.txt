@@ -15,3 +15,19 @@ E:\Development-Project-2-master\API\API\obj\Debug\APITest.csproj.GenerateResourc
 E:\Development-Project-2-master\API\API\obj\Debug\APITest.csproj.CoreCompileInputs.cache
 E:\Development-Project-2-master\API\API\obj\Debug\API.exe
 E:\Development-Project-2-master\API\API\obj\Debug\API.pdb
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\API.exe.config
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\API.exe
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\API.pdb
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\API.exe.CodeAnalysisLog.xml
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\API.exe.lastcodeanalysissucceeded
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\JSONParser.dll
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\ScenarioList.dll
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\Newtonsoft.Json.dll
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\JSONParser.pdb
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\ScenarioList.pdb
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Debug\Newtonsoft.Json.xml
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Debug\APITest.csprojResolveAssemblyReference.cache
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Debug\API.Properties.Resources.resources
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Debug\APITest.csproj.GenerateResource.Cache
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Debug\API.exe
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Debug\API.pdb

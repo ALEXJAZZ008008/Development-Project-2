@@ -2,7 +2,11 @@
 
 public class CameraControler : MonoBehaviour
 {
-    public GameObject[] objects;
+    public GameObject smokeCanvas;
+    public GameObject fireCanvas;
+    public GameObject fireExtinguisherCanvas;
+    public GameObject emergencyLight;
+    public GameObject audioVisualCanvas;
     public GameObject soundEffect;
     public GameObject outTransition;
     public Vector3 speed;
@@ -48,14 +52,14 @@ public class CameraControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateObjectActivityOnKeyPress(objects[0], KeyCode.T);
-        UpdateObjectActivityOnKeyPress(objects[1], KeyCode.Y);
-        UpdateObjectActivityOnKeyPress(objects[2], KeyCode.U);
-        UpdateObjectActivityOnKeyPress(objects[3], KeyCode.I);
+        UpdateObjectActivityOnKeyPress(smokeCanvas, KeyCode.T);
+        UpdateObjectActivityOnKeyPress(fireCanvas, KeyCode.Y);
+        UpdateObjectActivityOnKeyPress(fireExtinguisherCanvas, KeyCode.U);
+        UpdateObjectActivityOnKeyPress(emergencyLight, KeyCode.I);
 
         UpdateObjectActivityOnKeyPress(soundEffect, KeyCode.O);
 
-        if (soundEffect.activeSelf)
+        if (audioVisualCanvas.activeSelf && soundEffect.activeSelf)
         {
             if (Scenarios.m_SoundEffectWWWBool && !soundEffectSource.isPlaying)
             {

@@ -4,11 +4,8 @@ using UnityEngine;
 public class Smoke : MonoBehaviour
 {
     public GameObject smokePrefab;
-    public GameObject oculusCamera;
 
-    public float initialHeight;
     public int smokeIntensity;
-    public Vector2 smokeAngles;
 
     private List<GameObject> smokeList;
 
@@ -21,20 +18,78 @@ public class Smoke : MonoBehaviour
     {
         float angle = 360 / smokeIntensity;
 
-        float currentAngle = smokeAngles.x;
+        int count = 0;
 
-        for (int i = 0; i < smokeIntensity; i++)
+        Vector4 temporarySmokeArc = new Vector4(0.0f, 0.0f, 0.0f, 0.0f);
+        Vector2 currentAngle = new Vector2(0.0f, 0.0f);
+
+        for (int i = 0; i < Scenarios.m_SmokeArc.Count / 4; i++)
         {
-            if (currentAngle <= smokeAngles.y)
+            count = 0;
+
+            if (Scenarios.m_SmokeArc[i * 4] < Scenarios.m_SmokeArc[(i * 4) + 1])
             {
-                smokeList.Add(Instantiate(smokePrefab));
-                smokeList[i].transform.parent = transform;
+                temporarySmokeArc[0] = Scenarios.m_SmokeArc[i * 4];
+                temporarySmokeArc[1] = Scenarios.m_SmokeArc[(i * 4) + 1];
+            }
+            else
+            {
+                temporarySmokeArc[0] = Scenarios.m_SmokeArc[i * 4];
+                temporarySmokeArc[1] = 360.0f + Scenarios.m_SmokeArc[(i * 4) + 1];
+            }
 
-                smokeList[i].transform.RotateAround(Vector3.zero, oculusCamera.transform.forward, oculusCamera.transform.rotation.eulerAngles.z);
-                smokeList[i].transform.RotateAround(Vector3.zero, oculusCamera.transform.right, oculusCamera.transform.rotation.eulerAngles.x + initialHeight);
-                smokeList[i].transform.RotateAround(Vector3.zero, oculusCamera.transform.up, oculusCamera.transform.rotation.eulerAngles.y + currentAngle);
+            if (Scenarios.m_SmokeArc[(i * 4) + 2] < Scenarios.m_SmokeArc[(i * 4) + 3])
+            {
+                temporarySmokeArc[2] = Scenarios.m_SmokeArc[(i * 4) + 2];
+                temporarySmokeArc[3] = Scenarios.m_SmokeArc[(i * 4) + 3];
+            }
+            else
+            {
+                temporarySmokeArc[2] = Scenarios.m_SmokeArc[(i * 4) + 2];
+                temporarySmokeArc[3] = 360.0f + Scenarios.m_SmokeArc[(i * 4) + 3];
+            }
 
-                currentAngle += angle;
+            currentAngle = new Vector2(temporarySmokeArc[0], temporarySmokeArc[2]);
+
+            for (int j = 0; j < smokeIntensity; j++)
+            {
+                if (currentAngle.x <= temporarySmokeArc[1])
+                {
+                    currentAngle.y = temporarySmokeArc[2];
+
+                    for (int k = 0; k < smokeIntensity; k++)
+                    {
+                        if (currentAngle.y <= temporarySmokeArc[3])
+                        {
+                            count++;
+
+                            smokeList.Add(Instantiate(smokePrefab));
+
+                            if (count % 2 == 0)
+                            {
+                                smokeList[smokeList.Count - 1].transform.RotateAround(Vector3.zero, Vector3.right, currentAngle.y);
+                                smokeList[smokeList.Count - 1].transform.RotateAround(Vector3.zero, Vector3.up, currentAngle.x);
+                            }
+                            else
+                            {
+                                smokeList[smokeList.Count - 1].transform.RotateAround(Vector3.zero, Vector3.right, currentAngle.y);
+                                smokeList[smokeList.Count - 1].transform.RotateAround(Vector3.zero, Vector3.up, currentAngle.x + (angle / 2));
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                        currentAngle.y += angle;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+
+                currentAngle.x += angle;
             }
         }
     }
