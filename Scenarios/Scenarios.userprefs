@@ -1,17 +1,15 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LowerSmoke.cs">
+﻿<Properties StartupItem="Scenarios.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraControler.cs">
     <Files>
       <File FileName="Assets\Scripts\OculusCameraPositionLock.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Fire.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Smoke.cs" Line="33" Column="97" />
-      <File FileName="Assets\Scripts\Choices.cs" Line="19" Column="5" />
+      <File FileName="Assets\Scripts\Smoke.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Choices.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\OutTransition.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Scenarios.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\AudioVisual.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SmokeStarter.cs" Line="16" Column="2" />
-      <File FileName="Assets\Scripts\LowerSmoke.cs" Line="8" Column="48" />
-      <File FileName="Assets\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" Line="13" Column="29" />
+      <File FileName="Assets\Scripts\CameraControler.cs" Line="62" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

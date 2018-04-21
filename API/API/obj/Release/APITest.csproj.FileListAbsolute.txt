@@ -13,3 +13,6 @@ E:\Development-Project-2-master\API\API\obj\Release\APITest.csproj.GenerateResou
 E:\Development-Project-2-master\API\API\obj\Release\APITest.csproj.CoreCompileInputs.cache
 E:\Development-Project-2-master\API\API\obj\Release\API.exe
 E:\Development-Project-2-master\API\API\obj\Release\API.pdb
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\bin\Release\API.exe.config
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Release\API.exe
+C:\Users\546177\Documents\Unity Projects\Development-Project-2\API\API\obj\Release\API.pdb

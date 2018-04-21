@@ -39,7 +39,7 @@ public class ChoiceTrigger : MonoBehaviour
 
                 Scenarios.m_Score += score;
 
-                using (StreamWriter streamWriter = new StreamWriter(Scenarios.m_UniqueOuputPath, true))
+                using (StreamWriter streamWriter = new StreamWriter(Scenarios.m_UniqueOutputPath, true))
                 {
                     streamWriter.WriteLine(feedbackText + "\r\nCurrent Score: " + Scenarios.m_Score.ToString() + "\r\nCurrent Time: " + Scenarios.m_Time.ToString());
                 }
