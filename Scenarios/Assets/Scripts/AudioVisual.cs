@@ -25,8 +25,6 @@ public class AudioVisual : MonoBehaviour
     private AudioSource fireSoundEffectSource;
     private AudioSource fireExtinguisherSoundEffectSource;
 
-    private bool ambientReadyToPlay;
-
     void Awake()
     {
         videoPlayer = video.GetComponent<VideoPlayer>();
@@ -36,8 +34,6 @@ public class AudioVisual : MonoBehaviour
         soundEffectSource = soundEffect.GetComponent<AudioSource>();
         fireSoundEffectSource = fireSoundEffect.GetComponent<AudioSource>();
         fireExtinguisherSoundEffectSource = fireExtinguisherSoundEffect.GetComponent<AudioSource>();
-
-        ambientReadyToPlay = false;
     }
 
     IEnumerator LoadAmbientSoundCoroutine()

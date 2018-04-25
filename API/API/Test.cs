@@ -18,62 +18,44 @@ namespace API
 
             ScenarioList scenarioList = new ScenarioList();
 
-            Scenario scenarioZero = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", directoryPath + "/Scenarios/Assets/Output", "scenarioText0", "scenarioChoiceText0", new List<float> { 35.0f, 90.0f, 35.0f, 45.0f }, new List<float> { 35.0f, 90.0f, 35.0f, 45.0f }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 10.0f, false, false, false, false, false);
-            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary2.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientRadio.wav", string.Empty, directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", string.Empty, "scenarioText1", "scenarioChoiceText1", new List<float> { 55.0f, 90.0f, 35.0f, 45.0f, 135.0f, 195.0f, 35.0f, 50.0f }, new List<float> { 55.0f, 90.0f, 35.0f, 45.0f, 135.0f, 195.0f, 35.0f, 50.0f }, 3.0f, 0.9f, 0.25f, 0.3f, 0.0f, 0.5f, 9.0f, true, false, false, false, false);
-            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary3.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", string.Empty, "scenarioText2", "scenarioChoiceText2", new List<float> { 65.0f, 120.0f, 35.0f, 65.0f }, new List<float> { 65.0f, 120.0f, 35.0f, 65.0f }, 3.0f, 0.8f, 0.25f, 0.75f, 1.0f, 0.5f, 8.0f, true, true, false, false, false);
-            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Stationary4.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientRadio.wav", string.Empty, directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", string.Empty, "scenarioText3", "scenarioChoiceText3", new List<float> { 285.0f, 255.0f, 45.0f, 35.0f }, new List<float> { 285.0f, 255.0f, 45.0f, 35.0f }, 3.0f, 0.7f, 0.25f, 0.3f, 0.0f, 0.5f, 7.0f, true, true, false, true, true);
-            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Trolly1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Narration.wav", directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", string.Empty, "scenarioText4", "scenarioChoiceText4", new List<float> { 0.0f, 360.0f, 70.0f, 110.0f }, new List<float> { 0.0f, 360.0f, 70.0f, 110.0f }, 3.0f, 0.6f, 0.25f, 0.75f, 1.0f, 0.5f, 6.0f, true, true, true, true, true);
-            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Walking1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientRadio.wav", string.Empty, directoryPath + "/Scenarios/Assets/Audio/AlarmSound.wav", string.Empty, "scenarioText5", "scenarioChoiceText5", new List<float> { 135.0f, 225.0f, 30.0f, -30.0f }, new List<float> { 135.0f, 225.0f, 30.0f, -30.0f }, 3.0f, 0.5f, 0.25f, 0.3f, 1.0f, 0.5f, 5.0f, false, false, false, false, false);
-            Scenario scenarioSix = new Scenario(new List<Choice>(), string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, "scenarioText6", "scenarioChoiceText6", new List<float> { 35.0f, 90.0f, 35.0f, 45.0f }, new List<float> { 35.0f, 90.0f, 35.0f, 45.0f }, 3.0f, 0.4f, 0.25f, 0.75f, 1.0f, 0.75f, 4.0f, false, false, false, false, false);
+            Scenario scenarioOne = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/scene1.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/scene1_audio.wav", directoryPath + string.Empty, directoryPath + "/Scenarios/Assets/Output", "scenarioText1", "scenarioChoiceText1", new List<float> {  }, new List<float> {  }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, false, false);
+            Scenario scenarioTwo = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene2.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene2_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText2", "scenarioChoiceText2", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, true, true);
+            Scenario scenarioThree = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene3.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene3_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText3", "scenarioChoiceText3", new List<float> { }, new List<float> { }, 3.0f, 0.75f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, true, false, true, true);
+            Scenario scenarioFour = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene4.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene4_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText4", "scenarioChoiceText4", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, true, true);
+            Scenario scenarioFive = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene5.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene5_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText5", "scenarioChoiceText5", new List<float> { }, new List<float> { }, 3.0f, 0.75f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, true, true, true, true, true);
+            Scenario scenarioSix = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene6.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene6_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText6", "scenarioChoiceText6", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, true, true);
+            Scenario scenarioSeven = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene7.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene7_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText7", "scenarioChoiceText7", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, true, true);
+            Scenario scenarioEight = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene8.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene8_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText8", "scenarioChoiceText8", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, true, true);
+            Scenario scenarioNine = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene9.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene9_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Continuous.wav", string.Empty, "scenarioText9", "scenarioChoiceText9", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, false, true, true);
+            Scenario scenarioTen = new Scenario(new List<Choice>(), directoryPath + "/Scenarios/Assets/Videos/Scene10.mp4", directoryPath + "/Scenarios/Assets/Audio/AmbientHospital.wav", directoryPath + "/Scenarios/Assets/Audio/Scene10_audio.wav", directoryPath + "/Scenarios/Assets/Audio/Intermittent.wav", string.Empty, "scenarioText10", "scenarioChoiceText10", new List<float> { }, new List<float> { }, 3.0f, 1.0f, 0.25f, 0.75f, 1.0f, 0.5f, 5.0f, false, false, true, false, true);
 
-            Choice choiceZero = new Choice(1, "Scenario 1", "Went to 1", 0);
+            scenarioOne.GetChoices().Add(new Choice(1, "Ring switchboard", "Rang switchboard", 1));
+            scenarioOne.GetChoices().Add(new Choice(0, "Ring fire brigade", "Rang fire brigade", -1));
+            scenarioOne.GetChoices().Add(new Choice(0, "Evacuate", "Evacuated", -1));
 
-            scenarioZero.GetChoices().Add(choiceZero);
+            scenarioTwo.GetChoices().Add(new Choice(1, "Evacuate", "Evacuated", -1));
+            scenarioTwo.GetChoices().Add(new Choice(2, "Investigate", "Investigated", 1));
+            scenarioTwo.GetChoices().Add(new Choice(1, "Wait", "Waited", -1));
 
-            Choice choiceOne = new Choice(0, "Scenario 0", "Went to 0", -1);
-            Choice choiceTwo = new Choice(2, "Scenario 2", "Went to 2", 1);
+            scenarioThree.GetChoices().Add(new Choice(2, "Evacuate", "Evacuated", -1));
+            scenarioThree.GetChoices().Add(new Choice(3, "Fight the fire", "Fought the fire", 1));
+            scenarioThree.GetChoices().Add(new Choice(2, "Wait", "Waited", -1));
 
-            scenarioOne.GetChoices().Add(choiceOne);
-            scenarioOne.GetChoices().Add(choiceTwo);
+            scenarioFour.GetChoices().Add(new Choice(4, "Foam", "Used foam", 1));
+            scenarioFour.GetChoices().Add(new Choice(3, "CO2", "Used CO2", -1));
 
-            Choice choiceThree = new Choice(0, "Scenario 0", "Went to 0", -1);
-            Choice choiceFour = new Choice(1, "Scenario 1", "Went to 1", -1);
-            Choice choiceFive = new Choice(3, "Scenario 3", "Went to 3", 1);
+            scenarioFive.GetChoices().Add(new Choice(5, string.Empty, string.Empty, 0));
 
-            scenarioTwo.GetChoices().Add(choiceThree);
-            scenarioTwo.GetChoices().Add(choiceFour);
-            scenarioTwo.GetChoices().Add(choiceFive);
+            scenarioSix.GetChoices().Add(new Choice(4, "Go to safety", "Went to safety", -1));
+            scenarioSix.GetChoices().Add(new Choice(5, "Return to ward", "Returned to ward", 1));
 
-            Choice choiceSix = new Choice(0, "Scenario 0", "Went to 0", -1);
-            Choice choiceSeven = new Choice(1, "Scenario 1", "Went to 1", -1);
-            Choice choiceEight = new Choice(2, "Scenario 2", "Went to 2", -1);
-            Choice choiceNine = new Choice(4, "Scenario 4", "Went to 4", 1);
+            scenarioSeven.GetChoices().Add(new Choice(6, "Go to safety", "Went to safety", -1));
+            scenarioSeven.GetChoices().Add(new Choice(7, "Return to ward", "Returned to ward", 1));
 
-            scenarioThree.GetChoices().Add(choiceSix);
-            scenarioThree.GetChoices().Add(choiceSeven);
-            scenarioThree.GetChoices().Add(choiceEight);
-            scenarioThree.GetChoices().Add(choiceNine);
+            scenarioEight.GetChoices().Add(new Choice(7, "Wait", "Waited", -1));
+            scenarioEight.GetChoices().Add(new Choice(8, "Evacuate", "Evacuated", 1));
 
-            Choice choiceTen = new Choice(0, "Scenario 0", "Went to 0", -1);
-            Choice choiceEleven = new Choice(1, "Scenario 1", "Went to 1", -1);
-            Choice choiceTwelve = new Choice(2, "Scenario 2", "Went to 2", -1);
-            Choice choiceThirteen = new Choice(3, "Scenario 3", "Went to 3", -1);
-            Choice choiceFourteen = new Choice(5, "Scenario 5", "Went to 5", 1);
-
-            scenarioFour.GetChoices().Add(choiceTen);
-            scenarioFour.GetChoices().Add(choiceEleven);
-            scenarioFour.GetChoices().Add(choiceTwelve);
-            scenarioFour.GetChoices().Add(choiceThirteen);
-            scenarioFour.GetChoices().Add(choiceFourteen);
-
-            Choice choiceFifteen = new Choice(6, "Scenario 6", "Went to 6", 0);
-
-            scenarioList.GetScenarios().Add(scenarioZero);
-            scenarioList.GetScenarios().Add(scenarioOne);
-            scenarioList.GetScenarios().Add(scenarioTwo);
-            scenarioList.GetScenarios().Add(scenarioThree);
-            scenarioList.GetScenarios().Add(scenarioFour);
-            scenarioList.GetScenarios().Add(scenarioFive);
+            scenarioNine.GetChoices().Add(new Choice(9, string.Empty, string.Empty, 0));
 
             string json = string.Empty;
 

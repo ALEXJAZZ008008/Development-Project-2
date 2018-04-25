@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios", "Scenarios.csproj", "{6C60AAC2-21AF-6421-FC43-598DEAA634E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios.Editor", "Scenarios.Editor.csproj", "{82DBC5D2-F04B-35A7-15C0-ECA3618401F3}"
