@@ -38,3 +38,4 @@ C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\JSONParser\obj\Debug\JSO
 C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\JSONParser\obj\Debug\JSONParser.csproj.GenerateResource.Cache
 C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\JSONParser\obj\Debug\JSONParser.dll
 C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\JSONParser\obj\Debug\JSONParser.pdb
+C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\JSONParser\obj\Debug\JSONParser.csproj.CoreCompileInputs.cache

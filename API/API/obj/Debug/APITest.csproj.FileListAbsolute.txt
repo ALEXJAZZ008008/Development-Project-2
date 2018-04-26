@@ -47,3 +47,4 @@ C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\API\obj\Debug\API.Proper
 C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\API\obj\Debug\APITest.csproj.GenerateResource.Cache
 C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\API\obj\Debug\API.exe
 C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\API\obj\Debug\API.pdb
+C:\Temp\!!!Work!!!\Semester 2\Development-Project-2\API\API\obj\Debug\APITest.csproj.CoreCompileInputs.cache

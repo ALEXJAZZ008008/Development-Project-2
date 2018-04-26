@@ -67,13 +67,13 @@ public class Scenarios : MonoBehaviour
 
     private void DefaultScenario()
     {
-        m_VideoPath = Application.dataPath + "/Videos/Stationary1.mp4";
-        m_AmbientSoundPath = Application.dataPath + "/Audio/AmbientHospital.wav";
-        m_NarrationPath = Application.dataPath + "/Audio/Narration.wav";
-        m_SoundEffectPath = Application.dataPath + "/Audio/AlarmSound.wav";
+        m_VideoPath = Application.dataPath + "/Scenarios/Assets/Videos/Scene1_video.mp4";
+        m_AmbientSoundPath = Application.dataPath + "/Scenarios/Assets/Audio/AmbientHospital.wav";
+        m_NarrationPath = Application.dataPath + "/Scenarios/Assets/Audio/Scene1_audio.wav";
+        m_SoundEffectPath = Application.dataPath + "/Scenarios/Assets/Audio/Continuous.wav";
         m_OutputPath = Application.dataPath + "/Output";
-        m_ScenarioText = "scenarioText";
-        m_ScenarioChoiceText = "scenarioChoiceText";
+        m_ScenarioText = "Please press space";
+        m_ScenarioChoiceText = "What is the best course of action?";
 
         m_FireArc = new List<float> { 35.0f, 90.0f, 35.0f, 45.0f };
         m_SmokeArc = new List<float> { 35.0f, 90.0f, 35.0f, 45.0f };
@@ -83,8 +83,8 @@ public class Scenarios : MonoBehaviour
         m_LightingIntensity = 0.25f;
         m_AmbientSoundVolume = 0.75f;
         m_NarrationVolume = 1.0f;
-        m_SoundEffectVolume = 0.3f;
-        m_ChoiceWaitLength = 10.0f;
+        m_SoundEffectVolume = 0.5f;
+        m_ChoiceWaitLength = 5.0f;
 
         m_SmokeBool = false;
         m_FireBool = false;

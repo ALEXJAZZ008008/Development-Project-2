@@ -50,7 +50,7 @@ public class Arc : MonoBehaviour
     public bool importScenarioBool;
     public bool defaultScenarioListBool;
 
-    private ScenarioList scenarioList;
+    public static ScenarioList scenarioList;
 
     private int currentScenario;
 
@@ -115,7 +115,7 @@ public class Arc : MonoBehaviour
 
         if (m_NextScenario == 0)
         {
-            m_UniqueOutputPath = m_OutputPath + "/output " + DateTime.UtcNow.Ticks.ToString() + ".txt";
+            m_UniqueOutputPath = m_OutputPath + "/output.txt";
 
             m_Score = 0;
             m_Time = 0.0f;

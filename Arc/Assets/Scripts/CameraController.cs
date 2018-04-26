@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
     public GameObject fireCanvas;
     public GameObject smokeCanvas;
 
-
     public Text instructionText1;
     public Text instructionText2;
     public Text instructionText3;
@@ -191,12 +190,36 @@ public class CameraController : MonoBehaviour
 
             JSONParser.TObjectToJSON(ref output, arcList);
 
-            using (StreamWriter streamWriter = new StreamWriter(Arc.m_UniqueOutputPath, true))
+            using (StreamWriter streamWriter = new StreamWriter(Arc.m_UniqueOutputPath))
             {
                 streamWriter.WriteLine(output);
             }
 
             Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Arc.m_NextScenario++;
+
+            if(Arc.m_NextScenario > Arc.scenarioList.GetScenarios().Count - 1)
+            {
+                Arc.m_NextScenario = 0;
+            }
+
+            Arc.m_UpdateScenario = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Arc.m_NextScenario--;
+
+            if (Arc.m_NextScenario < 0)
+            {
+                Arc.m_NextScenario = Arc.scenarioList.GetScenarios().Count - 1;
+            }
+
+            Arc.m_UpdateScenario = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
